@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scene/Play.unity
+    guid: 3449ce4b3019e7f4983f9cb1ec5fccf6
+  - enabled: 1
+    path: Assets/Scene/Select Mode.unity
+    guid: 4d3c4f22b44d42a4685f47448e36806f
+  - enabled: 1
+    path: Assets/Scene/Clean Settings UI.unity
+    guid: c161cbe1d02774c6a988b00b2d8baadf
+  - enabled: 1
+    path: Assets/Scene/SideScene/Thanks for Playing Cube.unity
+    guid: 4c0f01a0886e83f4c9c42a961cb72b1d
+  - enabled: 1
+    path: Assets/Scene/Modes/Adventure Mode/Adventure Mode Select Lvl.unity
+    guid: 1728c33fb4b47e245a0598bcb1f88c83
+  - enabled: 1
+    path: Assets/Scene/Modes/Adventure Mode/Season 2/Adventure Mode LVL Season 2.unity
+    guid: 1bcfc79e7e4e4d14d92980904df5b10b
+  - enabled: 1
+    path: Assets/Scene/Scene/Leaderboard.unity
+    guid: a8579dc71647acc4eb77a7e59553cc10
+  - enabled: 1
+    path: Assets/Scene/Modes/No Limit Mode/No Limit Mode.unity
+    guid: d60c6d9fc1dbd1d48a64e427e478a99d
+  - enabled: 1
+    path: Assets/Scene/Modes/Adventure Mode/LVLs/Test Level/Level01.unity
+    guid: 4e2a71a5825b54446bfc91d589aaa492
+  - enabled: 1
+    path: Assets/Scene/Modes/Adventure Mode/LVLs/Snowy Path/Level02.unity
+    guid: 46a0663c100b5bd4b814779ba9bb1d99
+  - enabled: 1
+    path: Assets/Scene/Modes/Adventure Mode/LVLs/Green Land/Level03.unity
+    guid: a716da2551e27f44ea6a45ef69e0d387
+  - enabled: 1
+    path: Assets/Scene/Modes/Adventure Mode/LVLs/Water Park/Level04.unity
+    guid: ec0edd69f2325de4890f51e5e85c0162
+  - enabled: 1
+    path: Assets/Scene/Modes/Adventure Mode/LVLs/Reverse/Level05.unity
+    guid: a27ac3418e276ab438cbabc1dc96092d
+  - enabled: 1
+    path: Assets/Scene/Modes/Adventure Mode/LVLs/Final/Level06.unity
+    guid: 6fe0bcb2377452f439eb769dfdc457a9
+  - enabled: 1
+    path: Assets/Scene/SideScene/black.unity
+    guid: 6a378d7caa4c6b1469b0bef1b0d9c470
+  - enabled: 1
+    path: Assets/Scene/Scene/StoreV2.unity
+    guid: 1cb2fe0f09bb8c747acdc00a503f5b04
+  - enabled: 1
+    path: Assets/Assets/Highscore/HighscoreTable/Leaderboard V2.unity
+    guid: 7b983534fcd6adb4d8ec50e55837c14a
+  m_configObjects: {}

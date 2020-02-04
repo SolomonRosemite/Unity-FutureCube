@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "732411276995",
+    "firebase_url": "https://goodfoodv2.firebaseio.com",
+    "project_id": "goodfoodv2",
+    "storage_bucket": "goodfoodv2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732411276995:android:ab42d669f1fded5e4c7c76",
+        "android_client_info": {
+          "package_name": "com.Rosemite.FutureCube"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "732411276995-bui8osj30ioojt7l8n14le3l2q300bir.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSsLsnSMH478xSkP2LJj3rCO2_nXX8OYc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "732411276995-bui8osj30ioojt7l8n14le3l2q300bir.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "732411276995-p7m8ue9v0tgdb850olv6phea8f3sq1e0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Rosemite.FutureCubeIOS"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
