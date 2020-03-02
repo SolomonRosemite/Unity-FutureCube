@@ -240,9 +240,7 @@ public class LevelJson : MonoBehaviour
 
         // Upload Player
         string Url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScym2xMlBKtPTf2ImXAvLbk_VgNsBeoipR5EbIHyUXzx6rkwA/formResponse";
-        string[] Entry = new string[1];
-        Entry[0] = "entry.831246646";
-
+        string[] Entry = new string[1] { "entry.831246646" };
         StartCoroutine(SelfSystemApi.ins.Post(Url, JsonWrite, Entry));
     }
 

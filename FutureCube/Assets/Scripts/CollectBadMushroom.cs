@@ -27,7 +27,6 @@ public class CollectBadMushroom : MonoBehaviour
 
     public void SolvedTheProblem()
     {
-        print("hi");
         StartCoroutine(MiniPlayer());
         StartCoroutine(Reverse());
     }

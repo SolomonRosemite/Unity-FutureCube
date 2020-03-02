@@ -97,7 +97,6 @@ public class PlayerCollision : MonoBehaviour
         {
             CollectBadMushroom.ins.SolvedTheProblem();
         }
-        print("ghj");
 
         try
         {

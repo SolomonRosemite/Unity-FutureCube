@@ -253,7 +253,6 @@ public class SelfSystemApi : MonoBehaviour
     public void Send()
     {
         FeedBackText = FeedBack.GetComponent<InputField>().text;
-
         StartCoroutine(Post(URL, FeedBackText, Entry));
     }
 

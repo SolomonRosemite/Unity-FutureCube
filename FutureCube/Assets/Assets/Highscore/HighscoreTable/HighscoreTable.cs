@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using System.Collections.Generic;
+using System.Collections;
 using CodeMonkey.Utils;
+using UnityEngine.UI;
+using UnityEngine;
 
 public class HighscoreTable : MonoBehaviour
 {
-    public static HighscoreTable ins;
     private Transform entryContainer;
     private Transform entryTemplate;
     private List<Transform> highscoreEntryTransformList;
@@ -16,7 +15,6 @@ public class HighscoreTable : MonoBehaviour
 
     private void Start()
     {
-        ins = this;
         PlayerPrefs.DeleteAll();
 
         // Idk what this is
@@ -133,12 +131,11 @@ public class HighscoreTable : MonoBehaviour
                 if (highscores.highscoreEntryList[j].score > highscores.highscoreEntryList[i].score)
                 {
                     // Swap
-                    HighscoreEntry tmp = highscores.highscoreEntryList[i];
-                    highscores.highscoreEntryList[i] = highscores.highscoreEntryList[j];
-                    highscores.highscoreEntryList[j] = tmp;
+                    (highscores.highscoreEntryList[i], highscores.highscoreEntryList[j]) = (highscores.highscoreEntryList[j], highscores.highscoreEntryList[i]);
                 }
             }
         }
+        // highscores.highscoreEntryList.Sort(Highscores.highscoreEntryList);
 
         highscoreEntryTransformList = new List<Transform>();
         foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList)

@@ -24,7 +24,6 @@ public class LevelComplete : MonoBehaviour
         // Example "Level03" => "03"
         string TEMP = currentScene.name.Substring(currentScene.name.Length - 2);
         int Last2Level = Int32.Parse(TEMP);
-
         LevelJson.levelJson.LevelCompleted(Last2Level, PointSystem.pointSystem.Point);
 
         if (Level == 6)

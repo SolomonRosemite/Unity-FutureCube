@@ -137,5 +137,4 @@ public class UsernameSystem : MonoBehaviour
     {
         LoadJson.loadJson.JsonEditPlayerName(Playername.text);
     }
-
 }
