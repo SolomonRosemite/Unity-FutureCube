@@ -1489,6 +1489,7 @@ GameObject:
   - component: {fileID: 1776717521}
   - component: {fileID: 1776717520}
   - component: {fileID: 1776717522}
+  - component: {fileID: 1776717524}
   - component: {fileID: 1776717523}
   m_Layer: 0
   m_Name: Master
@@ -1620,6 +1621,12 @@ MonoBehaviour:
   Level04: 0
   Level05: 0
   Level06: 0
+  Level11: 0
+  Level12: 0
+  Level13: 0
+  Level14: 0
+  Level15: 0
+  Level16: 0
   SeasionOneCompleted: 0
   FirstLevelComplete: 0
   PlayerOutOfMap: 0
@@ -1725,6 +1732,12 @@ MonoBehaviour:
   Level04: 
   Level05: 
   Level06: 
+  Level11: 
+  Level12: 
+  Level13: 
+  Level14: 
+  Level15: 
+  Level16: 
   TotalPoints: 
 --- !u!114 &1776717523
 MonoBehaviour:
@@ -1736,6 +1749,18 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07619e24615228044bc4c85832ec72fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1776717524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776717507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9351513d4b847104d82e23e32b977b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1937597523

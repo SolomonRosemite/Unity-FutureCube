@@ -59,6 +59,7 @@ public class SelfSystemApi : MonoBehaviour
         {
             try { SmallFunctions.ins.SetScoreBoardOffline(CheckInternet()); } catch { }
             StartCoroutine(GetContent("https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5aZVt76NCY0w1MeogvmBP1T79lfayXye6bp1aII-u_U2L8qWKZESG7J2ZWBnjDfA7Fvmh4Sz6g0zw/pub?gid=1522364317&single=true&output=tsv"));
+            // StartCoroutine(GetContent("https://docs.google.com/spreadsheets/u/1/d/1vSzfB9XmJIXcymuwLEUC-5fqKbY_QW2KgsTn48Kvb-w/export?format=xlsx&gid=1522364317"));
         }
     }
 
@@ -150,6 +151,7 @@ public class SelfSystemApi : MonoBehaviour
                 Debug.Log("Form upload complete!");
             }
         }
+
     }
 
     public IEnumerator GetContent(string uri, bool UseScore = true)
@@ -200,13 +202,13 @@ public class SelfSystemApi : MonoBehaviour
 
         int Tempindex = 0;
 
-
         while (index >= Tempindex)
         {
             // Read Json (String)
             Json(JsonPlayer[index]);
             index--;
         }
+
         try { GameObject.Find("GameHandler").GetComponent<SmallFunctionsV2>().Go(); } catch { }
     }
 
