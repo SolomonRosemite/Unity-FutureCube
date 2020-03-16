@@ -115,9 +115,9 @@ public class UsernameSystem : MonoBehaviour
     bool UsernameUsed()
     {
         // For each Player show them in the ScoreTable
-        for (int i = 0; i < SelfSystemApi.ins.count; i++)
+        foreach (var Playernames in SelfSystemApi.ins.Playername)
         {
-            if (SelfSystemApi.ins.Playername[i].ToLower() == Playername.text.ToLower())
+            if (Playernames.ToLower() == Playername.text.ToLower())
             {
                 return true;
             }
