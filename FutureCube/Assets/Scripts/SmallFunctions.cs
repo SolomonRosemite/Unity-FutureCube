@@ -44,7 +44,7 @@ public class SmallFunctions : MonoBehaviour
     public void FeedBack()
     {
         string context = GameObject.Find("InputField FeedBack").GetComponent<InputField>().text;
-        SelfSystemApi.ins.SendFromButton("by Player:" + LoadJson.loadJson.PlayerName + " " + context);
+        BackendDatabase.ins.WriteFeedback(LoadJson.loadJson.PlayerName, context);
         FeedBackPanel.SetActive(true);
     }
 

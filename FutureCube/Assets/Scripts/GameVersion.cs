@@ -28,26 +28,7 @@ public class GameVersion : MonoBehaviour
     {
         yield return new WaitForSeconds(2.5f);
 
-        StartCoroutine(SelfSystemApi.ins.GetContent("https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5aZVt76NCY0w1MeogvmBP1T79lfayXye6bp1aII-u_U2L8qWKZESG7J2ZWBnjDfA7Fvmh4Sz6g0zw/pub?gid=522086444&single=true&output=tsv", false));
-
-        while (SelfSystemApi.ins.WebResponseTEMP == null)
-        {
-            // wait
-            yield return new WaitForSeconds(1);
-        }
-
-        VersionTEMP = SelfSystemApi.ins.WebResponseTEMP;
-
-        var pattern = @"(\{(?:.*?)\})";
-        foreach (string m in System.Text.RegularExpressions.Regex.Split(VersionTEMP, pattern))
-        {
-            if (m.Contains("{"))
-            {
-                VersionTEMP = m.Remove(m.Length - 1);
-                VersionTEMP = VersionTEMP.Substring(1);
-                Version = float.Parse(VersionTEMP);
-            }
-        }
+        Version = BackendDatabase.ins.GetGameVersion();
 
         if (Version > LoadJson.Version)
         {
