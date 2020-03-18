@@ -48,7 +48,7 @@ public class SelfSystemApi : MonoBehaviour
     {
         if (Time.time > nextActionTime)
         {
-            nextActionTime += 1f;
+            nextActionTime += 4f;
 
             // Create a temporary reference to the current scene.
             Scene currentScene = SceneManager.GetActiveScene();
@@ -103,9 +103,9 @@ public class SelfSystemApi : MonoBehaviour
         }
     }
 
-    void SetScore()
+    async void SetScore()
     {
-        List<string> JsonPlayer = BackendDatabase.ins.ReadScore();
+        List<string> JsonPlayer = await BackendDatabase.backend.ReadScore();
 
         foreach (string item in JsonPlayer)
         {

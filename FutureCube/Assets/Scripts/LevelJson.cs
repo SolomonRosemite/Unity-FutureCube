@@ -239,7 +239,7 @@ public class LevelJson : MonoBehaviour
         else { File.WriteAllText(Application.persistentDataPath + "/LevelSave.json", JsonWrite); }
 
         // Upload Player
-        BackendDatabase.ins.WriteScore(LoadJson.loadJson.PlayerName, JsonWrite);
+        BackendDatabase.backend.WriteScore(LoadJson.loadJson.PlayerName, JsonWrite);
     }
 
     public void SetScore()

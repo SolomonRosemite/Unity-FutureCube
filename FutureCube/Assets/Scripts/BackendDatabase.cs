@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using BackendlessAPI.Persistence;
 using BackendlessAPI.Exception;
+using System.Threading.Tasks;
 using System.Globalization;
 using BackendlessAPI.Async;
 using System.Collections;
-using Newtonsoft.Json;
 using BackendlessAPI;
 using UnityEngine;
 using System.IO;
@@ -12,25 +12,25 @@ using System;
 
 public class BackendDatabase : MonoBehaviour
 {
-    public static BackendDatabase ins;
+    public static BackendDatabase backend;
     void Start()
     {
-        ins = this;
+        backend = this;
 
         // logging in to backend
         Backendless.InitApp(GenerateCredentials.applicationId, GenerateCredentials.apiKey);
     }
 
-    public List<string> ReadScore()
+    public async Task<List<string>> ReadScore()
     {
         List<string> HighScores = new List<string>();
 
         DataQueryBuilder queryBuilder = DataQueryBuilder.Create();
 
-        int scoreCount = Backendless.Data.Of("HighScores").GetObjectCount();
+        int scoreCount = await Backendless.Data.Of("HighScores").GetObjectCountAsync();
         queryBuilder.SetPageSize(scoreCount);
 
-        var scores = Backendless.Data.Of("HighScores").Find(queryBuilder);
+        var scores = await Backendless.Data.Of("HighScores").FindAsync(queryBuilder);
         foreach (var item in scores)
         {
             HighScores.Add(item["score"].ToString());
@@ -39,31 +39,31 @@ public class BackendDatabase : MonoBehaviour
         return HighScores;
     }
 
-    public void WriteScore(string username, string score)
+    public async void WriteScore(string username, string score)
     {
         Dictionary<string, dynamic> scores = new Dictionary<string, dynamic>();
 
         scores["score"] = score;
 
-        if (UserExists(username))
+        if (await UserExists(username))
         {
-            Backendless.Data.Of("HighScores").UpdateAsync($"username = '{username}'", scores);
+            Backendless.Data.Of("HighScores").Update($"username = '{username}'", scores);
         }
         else
         {
             scores["username"] = username;
-            Backendless.Data.Of("HighScores").SaveAsync(scores);
+            Backendless.Data.Of("HighScores").Save(scores);
         }
     }
 
-    public bool UserExists(string username)
+    public async Task<bool> UserExists(string username)
     {
         DataQueryBuilder queryBuilder = DataQueryBuilder.Create();
 
-        int scoreCount = Backendless.Data.Of("HighScores").GetObjectCount();
+        int scoreCount = await Backendless.Data.Of("HighScores").GetObjectCountAsync();
         queryBuilder.SetPageSize(scoreCount);
 
-        var scores = Backendless.Data.Of("HighScores").Find(queryBuilder);
+        var scores = await Backendless.Data.Of("HighScores").FindAsync(queryBuilder);
 
         foreach (var item in scores)
         {
@@ -82,12 +82,12 @@ public class BackendDatabase : MonoBehaviour
         user["username"] = username;
         user["feedbackContext"] = context;
 
-        Backendless.Data.Of("Feedback").Save(user);
+        Backendless.Data.Of("Feedback").SaveAsync(user);
     }
 
-    public float GetGameVersion()
+    public async Task<float> GetGameVersion()
     {
-        var tempversion = (Backendless.Data.Of("GameVersion").Find())[0];
+        var tempversion = (await Backendless.Data.Of("GameVersion").FindAsync())[0];
         double temp = (double)tempversion["version"];
         float version = (float)temp;
 

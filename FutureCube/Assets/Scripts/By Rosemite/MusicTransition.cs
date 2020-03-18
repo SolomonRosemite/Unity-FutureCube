@@ -3,7 +3,6 @@
 public class MusicTransition : MonoBehaviour
 {
     public static MusicTransition musicTransition;
-
     public Animator MusicAni;
 
     private void Start()

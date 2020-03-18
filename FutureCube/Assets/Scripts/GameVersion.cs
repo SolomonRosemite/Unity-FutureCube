@@ -1,4 +1,5 @@
 ﻿using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 using System.Collections;
 using UnityEngine;
 
@@ -8,7 +9,6 @@ public class GameVersion : MonoBehaviour
     private float Version;
     private bool UpdateAvailable;
 
-
     private float nextActionTime;
     private float period = 0.5f;
 
@@ -16,19 +16,19 @@ public class GameVersion : MonoBehaviour
     {
         if (Application.internetReachability != NetworkReachability.NotReachable)
         {
-            StartCoroutine(CheckVersion());
-        }
-        else
-        {
-            //Player is Offline
+            StartCoroutine(Wait(2));
         }
     }
 
-    IEnumerator CheckVersion()
+    IEnumerator Wait(int sec)
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(sec);
+        CheckVersion();
+    }
 
-        Version = BackendDatabase.ins.GetGameVersion();
+    async void CheckVersion()
+    {
+        Version = await BackendDatabase.backend.GetGameVersion();
 
         if (Version > LoadJson.Version)
         {
@@ -38,7 +38,6 @@ public class GameVersion : MonoBehaviour
         {
             enabled = false;
         }
-
     }
 
     void Update()
