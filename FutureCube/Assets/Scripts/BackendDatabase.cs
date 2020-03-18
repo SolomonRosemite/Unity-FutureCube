@@ -17,17 +17,8 @@ public class BackendDatabase : MonoBehaviour
     {
         ins = this;
 
-        // Read Json
-        Dictionary<string, dynamic> json = new Dictionary<string, dynamic>();
-
-        string jsonFromFile;
-        if (PcOrPhoneDetect.ins.Platform == 1) { jsonFromFile = File.ReadAllText(Application.dataPath + "/credentials.json"); }
-        else { jsonFromFile = File.ReadAllText(Application.persistentDataPath + "/credentials.json"); }
-
-        json = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(jsonFromFile);
-
-        // logging to backend
-        Backendless.InitApp(json["applicationId"], json["api-key"]);
+        // logging in to backend
+        Backendless.InitApp(GenerateCredentials.applicationId, GenerateCredentials.apiKey);
     }
 
     public List<string> ReadScore()
