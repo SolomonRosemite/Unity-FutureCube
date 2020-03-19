@@ -149,7 +149,7 @@ public class CollectRandomBox : MonoBehaviour
             ItemsReady = false;
 
             // Prevents Error when tring to fade while ui is inactive.
-            try { UIFade.CallAnimatorBool("FadeOut", true); } catch { print("note"); }
+            try { UIFade.CallAnimatorBool("FadeOut", true); } catch { }
         }
     }
 
@@ -182,7 +182,7 @@ public class CollectRandomBox : MonoBehaviour
                 StartCoroutine(clock.ClockCollected());
                 break;
             case 3:
-                StartCoroutine(coin.CoinCollected(0));
+                StartCoroutine(clock.ClockCollected());
                 break;
         }
         UIFade.CallAnimatorBool("FadeOut", true);

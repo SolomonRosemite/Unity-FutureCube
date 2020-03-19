@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using UnityEngine.Audio;
+using UnityEngine;
 
 public class PauseV2 : MonoBehaviour
 {
     public static PauseV2 pauseV2;
-
+    public AudioMixer mainMixer;
     public GameObject GameOverUI;
     public GameObject PauseUI;
 
@@ -17,6 +18,7 @@ public class PauseV2 : MonoBehaviour
     private void Start()
     {
         pauseV2 = this;
+        normalAudio();
         audioSource = GameObject.FindGameObjectWithTag("OnLoadDestroy").GetComponent<AudioSource>();
 
         Check();
@@ -40,6 +42,7 @@ public class PauseV2 : MonoBehaviour
         }
         if (OverGame == true)
         {
+            muffledAudio();
             try
             {
                 if (audioSource.pitch <= 1)
@@ -59,6 +62,8 @@ public class PauseV2 : MonoBehaviour
 
     public void Resume()
     {
+        normalAudio();
+        GameObject.FindGameObjectWithTag("OnLoadDestroy").GetComponent<AudioSource>().bypassEffects = true;
         Time.timeScale = 1;
         PauseUI.SetActive(false);
         GamePaused = false;
@@ -67,6 +72,8 @@ public class PauseV2 : MonoBehaviour
 
     public void Pause()
     {
+        muffledAudio();
+        GameObject.FindGameObjectWithTag("OnLoadDestroy").GetComponent<AudioSource>().bypassEffects = false;
         Time.timeScale = 0;
         PauseUI.SetActive(true);
         GamePaused = true;
@@ -122,6 +129,24 @@ public class PauseV2 : MonoBehaviour
         Cursor.visible = true;
         GameOverUI.SetActive(true);
         Time.timeScale = .4f;
+    }
+
+    void normalAudio()
+    {
+        mainMixer.SetFloat("gain", 1.00f);
+        mainMixer.SetFloat("Octave range", 5.00f);
+        mainMixer.SetFloat("Center freq", 22000.0f);
+    }
+
+    void muffledAudio()
+    {
+        // mainMixer.SetFloat("gain", 0.05f);
+        // mainMixer.SetFloat("Octave range", 4.47f);
+        // mainMixer.SetFloat("Center freq", 8000.00f);
+
+        mainMixer.SetFloat("gain", 0.31f);
+        mainMixer.SetFloat("Octave range", 5.00f);
+        mainMixer.SetFloat("Center freq", 3746.00f);
     }
 
 }

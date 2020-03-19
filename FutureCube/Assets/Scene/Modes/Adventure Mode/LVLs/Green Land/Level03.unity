@@ -2905,11 +2905,6 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.98
       objectReference: {fileID: 0}
-    - target: {fileID: 23835425689906650, guid: b697770a973cd7642b7de31f5495c8cc,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a7a9dcc05e94c004f9f9d3ae3d7f89cb, type: 2}
     - target: {fileID: 54376238232810630, guid: b697770a973cd7642b7de31f5495c8cc,
         type: 3}
       propertyPath: m_Constraints
@@ -2940,6 +2935,11 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23835425689906650, guid: b697770a973cd7642b7de31f5495c8cc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7a9dcc05e94c004f9f9d3ae3d7f89cb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b697770a973cd7642b7de31f5495c8cc, type: 3}
 --- !u!4 &1621547771 stripped
@@ -3533,11 +3533,6 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.98
       objectReference: {fileID: 0}
-    - target: {fileID: 23835425689906650, guid: b697770a973cd7642b7de31f5495c8cc,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a7a9dcc05e94c004f9f9d3ae3d7f89cb, type: 2}
     - target: {fileID: 54376238232810630, guid: b697770a973cd7642b7de31f5495c8cc,
         type: 3}
       propertyPath: m_Constraints
@@ -3568,6 +3563,11 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23835425689906650, guid: b697770a973cd7642b7de31f5495c8cc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7a9dcc05e94c004f9f9d3ae3d7f89cb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b697770a973cd7642b7de31f5495c8cc, type: 3}
 --- !u!4 &1889323337 stripped

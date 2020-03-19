@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6509334917508099554}
   - component: {fileID: 8214806267779473246}
   - component: {fileID: 659459912452305841}
-  - component: {fileID: 7115637827936807198}
   m_Layer: 0
   m_Name: Reverse Mushroom
   m_TagString: Untagged
@@ -195,22 +194,7 @@ MonoBehaviour:
   UI: {fileID: 7820942414187622158}
   audioSource: {fileID: 8214806267779473246}
   clock: {fileID: 7685895583119428088}
-  UIFade: {fileID: 7115637827936807198}
---- !u!114 &7115637827936807198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6509334917510296354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b778265a431df8a4dab8565440bb01a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UseInspectorInput: 0
-  AnimatorString: 
-  AnimatorBool: 1
+  UIFade: {fileID: 0}
 --- !u!1 &7820942414187622158
 GameObject:
   m_ObjectHideFlags: 0

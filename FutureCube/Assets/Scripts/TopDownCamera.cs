@@ -8,7 +8,6 @@ public class TopDownCamera : MonoBehaviour
 
     // Camera
     private Camera TopDownCam;
-    private float SavedPOV;
     private byte Turn = 0;
 
     // FollowPlayer
@@ -67,10 +66,8 @@ public class TopDownCamera : MonoBehaviour
         // EZCameraShake
         cameraShaker.enabled = false;
 
-        // Set Camera Rotation
-        SavedPOV = TopDownCam.fieldOfView;
-        TopDownCam.fieldOfView = 120;
         Turn = 1;
+        TopDownCam.fieldOfView = 120;
 
         // FollowPlayer
         SavedOffset = followPlayer.offset;
@@ -80,14 +77,18 @@ public class TopDownCamera : MonoBehaviour
 
     public void FixCamera()
     {
+        print("state 1");
         TopDownCameraEnd.ins.SetbackCamera = false;
+        print("state 2");
 
         // FollowPlayer
         followPlayer.offset = SavedOffset;
+        print("state 3");
 
         // Reset Camera Rotation
-        TopDownCam.fieldOfView = SavedPOV;
+        TopDownCam.fieldOfView = 74;
         Turn = 2;
+        // print("state 5");
 
         // EZCameraShake
         StartCoroutine(EnableShaker());

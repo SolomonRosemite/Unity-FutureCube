@@ -1,11 +1,11 @@
 {
     "LevelComplete": 10,
-    "Volume": -20.613388061523439,
+    "Volume": -5.412039756774902,
     "SFXOnOff": false,
-    "MusicOnOff": true,
+    "MusicOnOff": false,
     "PlayerName": "Jessie",
     "SetQuality": 3.0,
-    "V_Coins": 7010,
+    "V_Coins": 15343,
     "PlayerColor": {
         "r": 1.0,
         "g": 0.10980392247438431,

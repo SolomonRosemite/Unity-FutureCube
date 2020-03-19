@@ -1721,10 +1721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7dfb92915c717740b1a7792777eb9b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FeedBack: {fileID: 0}
-  WebResponseTEMP: 
   count: 0
-  Test: 0
   Playername: []
   Level01: 
   Level02: 
@@ -1751,6 +1748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07619e24615228044bc4c85832ec72fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMixer: {fileID: 24100000, guid: 0ac7fb39e445048d89688f69c2a1839a, type: 2}
 --- !u!114 &1776717524
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,5 +6,6 @@ public class starters : MonoBehaviour
     {
         Time.timeScale = 1;
         try { GameObject.FindGameObjectWithTag("OnLoadDestroy").GetComponent<AudioSource>().pitch = 1; } catch { }
+        try { GameObject.FindGameObjectWithTag("OnLoadDestroy").GetComponent<AudioSource>().bypassEffects = true; } catch { }
     }
 }

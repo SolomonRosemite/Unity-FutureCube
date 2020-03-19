@@ -23,10 +23,4 @@ public class SetLeaderboardString : MonoBehaviour
 
         SetLeaderboardUI.ins.UpdateText("Level " + Level);
     }
-
-    public void Hide()
-    {
-    }
-
-
 }

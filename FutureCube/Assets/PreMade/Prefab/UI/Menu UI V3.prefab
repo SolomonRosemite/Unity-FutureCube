@@ -2285,6 +2285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89286ec93eaca2b43884c735f0a4c991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMixer: {fileID: 24100000, guid: 0ac7fb39e445048d89688f69c2a1839a, type: 2}
   GameOverUI: {fileID: 7804091379835218091}
   PauseUI: {fileID: 8584910252920893604}
   GamePaused: 0
@@ -2359,6 +2360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnOffMusic: 0
+  FeedBackPanel: {fileID: 0}
 --- !u!1 &9052924846225154434
 GameObject:
   m_ObjectHideFlags: 0

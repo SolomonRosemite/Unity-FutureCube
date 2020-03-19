@@ -69,42 +69,42 @@ public class HighscoreTable : MonoBehaviour
             case "Level11":
                 for (int i = 0; i < SelfSystemApi.ins.count; i++)
                 {
-                    AddHighscoreEntry(SelfSystemApi.ins.Level11[i], SelfSystemApi.ins.Playername[i]);
+                    try { AddHighscoreEntry(SelfSystemApi.ins.Level11[i], SelfSystemApi.ins.Playername[i]); } catch { }
                 }
                 break;
 
             case "Level12":
                 for (int i = 0; i < SelfSystemApi.ins.count; i++)
                 {
-                    AddHighscoreEntry(SelfSystemApi.ins.Level12[i], SelfSystemApi.ins.Playername[i]);
+                    try { AddHighscoreEntry(SelfSystemApi.ins.Level12[i], SelfSystemApi.ins.Playername[i]); } catch { }
                 }
                 break;
 
             case "Level13":
                 for (int i = 0; i < SelfSystemApi.ins.count; i++)
                 {
-                    AddHighscoreEntry(SelfSystemApi.ins.Level13[i], SelfSystemApi.ins.Playername[i]);
+                    try { AddHighscoreEntry(SelfSystemApi.ins.Level13[i], SelfSystemApi.ins.Playername[i]); } catch { }
                 }
                 break;
 
             case "Level14":
                 for (int i = 0; i < SelfSystemApi.ins.count; i++)
                 {
-                    AddHighscoreEntry(SelfSystemApi.ins.Level14[i], SelfSystemApi.ins.Playername[i]);
+                    try { AddHighscoreEntry(SelfSystemApi.ins.Level14[i], SelfSystemApi.ins.Playername[i]); } catch { }
                 }
                 break;
 
             case "Level15":
                 for (int i = 0; i < SelfSystemApi.ins.count; i++)
                 {
-                    AddHighscoreEntry(SelfSystemApi.ins.Level15[i], SelfSystemApi.ins.Playername[i]);
+                    try { AddHighscoreEntry(SelfSystemApi.ins.Level15[i], SelfSystemApi.ins.Playername[i]); } catch { }
                 }
                 break;
 
             case "Level16":
                 for (int i = 0; i < SelfSystemApi.ins.count; i++)
                 {
-                    AddHighscoreEntry(SelfSystemApi.ins.Level16[i], SelfSystemApi.ins.Playername[i]);
+                    try { AddHighscoreEntry(SelfSystemApi.ins.Level16[i], SelfSystemApi.ins.Playername[i]); } catch { }
                 }
                 break;
 

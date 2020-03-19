@@ -139,14 +139,21 @@ public class SelfSystemApi : MonoBehaviour
             Level05.Add(loadedPlayer.Level05);
             Level06.Add(loadedPlayer.Level06);
 
-            Level06.Add(loadedPlayer.Level11);
-            Level06.Add(loadedPlayer.Level12);
-            Level06.Add(loadedPlayer.Level13);
-            Level06.Add(loadedPlayer.Level14);
-            Level06.Add(loadedPlayer.Level15);
-            Level06.Add(loadedPlayer.Level16);
+            Level11.Add(loadedPlayer.Level11);
+            Level12.Add(loadedPlayer.Level12);
+            Level13.Add(loadedPlayer.Level13);
+            Level14.Add(loadedPlayer.Level14);
+            Level15.Add(loadedPlayer.Level15);
+            Level16.Add(loadedPlayer.Level16);
 
-            TotalPoints.Add(loadedPlayer.Level01 + loadedPlayer.Level02 + loadedPlayer.Level03 + loadedPlayer.Level04 + loadedPlayer.Level05 + loadedPlayer.Level06 + loadedPlayer.Level11 + loadedPlayer.Level12 + loadedPlayer.Level13 + loadedPlayer.Level14 + loadedPlayer.Level15 + loadedPlayer.Level16);
+            try
+            {
+                TotalPoints.Add(loadedPlayer.Level01 + loadedPlayer.Level02 + loadedPlayer.Level03 + loadedPlayer.Level04 + loadedPlayer.Level05 + loadedPlayer.Level06 + loadedPlayer.Level11 + loadedPlayer.Level12 + loadedPlayer.Level13 + loadedPlayer.Level14 + loadedPlayer.Level15 + loadedPlayer.Level16);
+            }
+            catch
+            {
+                TotalPoints.Add(loadedPlayer.Level01 + loadedPlayer.Level02 + loadedPlayer.Level03 + loadedPlayer.Level04 + loadedPlayer.Level05 + loadedPlayer.Level06);
+            }
 
             count++;
 
