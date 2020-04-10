@@ -10,9 +10,10 @@
     <img src="https://img.shields.io/badge/platform-mobile-blue?style=flat-square" alt="Project Platform" />
   </p>
   
-  <p align="center">
-    <img src="./FutureCube/Docs/FutureCube%20gif.gif" width="500">
-  </p>
+<p align="center">
+    <img src="./FutureCube/Docs/FutureCube%20gif.gif" width="400">
+    <img src="https://res.cloudinary.com/rosemite/image/upload/v1722678794/Future%20Cube/pfbkzqfjnnzgj9vzpgbg.png" width="400">
+</p>
 
 # About📖
 
@@ -36,7 +37,7 @@
 git clone https://github.com/SolomonRosemite/Unity-FutureCube.git
 ```
 
-2. (Optionally) Connect to Firebase:
+2. (Optionally) Connect to Firebase (needed for leaderboards):
 
 - Create a Firebase Project: <a href="https://firebase.google.com">here.</a>
 - Connect Unity Project to Firebase:
@@ -44,12 +45,8 @@ git clone https://github.com/SolomonRosemite/Unity-FutureCube.git
 
 # Built with⛏️
 
-- Database:
-  <code><img height="20" align="top" src="https://raw.githubusercontent.com/github/explore/f3dc333811d46c39b8b0b1b903daf12da2ff18b3/topics/firebase/firebase.png">
-  Firebase</code>
-- Engine: <code>
-  <img width="20" height="20" align="top" src="https://raw.githubusercontent.com/github/explore/a23885715f851ec8bb10b06e9345a41ac0f0c47e/topics/csharp/csharp.png">
-  Unity</code>
+- Database: <code><img height="20" align="top" src="https://raw.githubusercontent.com/github/explore/f3dc333811d46c39b8b0b1b903daf12da2ff18b3/topics/firebase/firebase.png"> Firebase</code>
+- Engine: <code><img width="20" height="20" align="top" src="https://raw.githubusercontent.com/github/explore/a23885715f851ec8bb10b06e9345a41ac0f0c47e/topics/csharp/csharp.png"> Unity</code>
 
 # Patch Notes📕
 
