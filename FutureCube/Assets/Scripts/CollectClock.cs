@@ -130,7 +130,25 @@ public class CollectClock : MonoBehaviour
 
         Time.timeScale = timeScale;
 
+        if (PcOrPhoneDetect.ins.Platform == 1)
+        {
+            PlayerMovement.playerMovement.sidewaysForce *= 1.5f;
+        }
+        else
+        {
+            PlayerMovePhone.playerMovement.sidewaysForce *= 1.5f;
+        }
+
         yield return new WaitForSeconds(Duration);
+
+        if (PcOrPhoneDetect.ins.Platform == 1)
+        {
+            PlayerMovement.playerMovement.sidewaysForce /= 1.5f;
+        }
+        else
+        {
+            PlayerMovePhone.playerMovement.sidewaysForce /= 1.5f;
+        }
 
         Reverse = true;
 
