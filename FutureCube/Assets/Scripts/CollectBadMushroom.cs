@@ -41,10 +41,10 @@ public class CollectBadMushroom : MonoBehaviour
 
         yield return new WaitForSeconds(.9f);
 
-        StartCoroutine(ReverseMain());
+        StartCoroutine(ReversePlayerMovement());
     }
 
-    IEnumerator ReverseMain()
+    IEnumerator ReversePlayerMovement()
     {
         clock.SetSilder(3);
 
@@ -88,9 +88,6 @@ public class CollectBadMushroom : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         Player.transform.localScale = new Vector3(1, 1, 1);
-
-        // Show particles
-
     }
 
 }

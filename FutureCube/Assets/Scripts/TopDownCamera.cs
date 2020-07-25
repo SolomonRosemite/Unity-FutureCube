@@ -77,18 +77,14 @@ public class TopDownCamera : MonoBehaviour
 
     public void FixCamera()
     {
-        print("state 1");
         TopDownCameraEnd.ins.SetbackCamera = false;
-        print("state 2");
 
         // FollowPlayer
         followPlayer.offset = SavedOffset;
-        print("state 3");
 
         // Reset Camera Rotation
         TopDownCam.fieldOfView = 74;
         Turn = 2;
-        // print("state 5");
 
         // EZCameraShake
         StartCoroutine(EnableShaker());

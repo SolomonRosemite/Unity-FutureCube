@@ -46,18 +46,8 @@ public class ShowVCoinLive : MonoBehaviour
             }
             else if (Mode == 3)
             {
-                oaky();
-            }
-            else
-            {
-                print("Set a mode");
+                Mathf.Lerp(minimum, LoadJson.loadJson.V_Coins, 20);
             }
         }
     }
-
-    void oaky()
-    {
-        Mathf.Lerp(minimum, LoadJson.loadJson.V_Coins, 20);
-    }
-
 }

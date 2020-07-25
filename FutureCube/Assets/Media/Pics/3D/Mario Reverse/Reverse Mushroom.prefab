@@ -58,6 +58,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -71,6 +72,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -94,7 +96,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -232,10 +234,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6509334917509869314}
     m_Modifications:
-    - target: {fileID: 8541748948796507745, guid: 20dd4f23f6e99354597d844561dca6fa,
+    - target: {fileID: 5363084609436720352, guid: 20dd4f23f6e99354597d844561dca6fa,
         type: 3}
-      propertyPath: m_Name
-      value: Clock
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8541748948796507744, guid: 20dd4f23f6e99354597d844561dca6fa,
         type: 3}
@@ -292,10 +294,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5363084609436720352, guid: 20dd4f23f6e99354597d844561dca6fa,
+    - target: {fileID: 8541748948796507745, guid: 20dd4f23f6e99354597d844561dca6fa,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_Name
+      value: Clock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20dd4f23f6e99354597d844561dca6fa, type: 3}

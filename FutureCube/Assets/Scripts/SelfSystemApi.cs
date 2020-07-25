@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine.Networking;
@@ -110,7 +111,6 @@ public class SelfSystemApi : MonoBehaviour
         foreach (string item in JsonPlayer)
         {
             Json(item);
-
         }
         try { GameObject.Find("GameHandler").GetComponent<SmallFunctionsV2>().Go(); } catch { }
     }
@@ -123,9 +123,18 @@ public class SelfSystemApi : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            if (Playername[i] == loadedPlayer.Playername)
+            try
             {
-                Add = false;
+                if (Playername[i] == loadedPlayer.Playername)
+                {
+                    Add = false;
+                }
+            }
+            catch (System.Exception)
+            {
+                System.Console.WriteLine(i);
+                System.Console.WriteLine(count);
+                throw new NullReferenceException();
             }
         }
 
