@@ -1,7 +1,5 @@
 ###
 GenerateCredentials.cs
-LevelSave.json
-PlayerChocolateSave.json
 # Unity folders and files
 ###
 [Aa]ssets/AssetStoreTools*
@@ -15,6 +13,7 @@ PlayerChocolateSave.json
 sysinfo.txt
 # Unity3D generated meta files
 *.pidb.meta
+
 
 ###
 # VS/MD solution and project files
