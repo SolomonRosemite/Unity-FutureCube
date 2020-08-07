@@ -126,7 +126,7 @@ public class CollectClock : MonoBehaviour
 
     public IEnumerator ClockV2()
     {
-        sliderForClock.Starter();
+        sliderForClock.StartSlider();
 
         Time.timeScale = timeScale;
 
@@ -155,12 +155,11 @@ public class CollectClock : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void SetSilder(float Duration)
+    public void SetSidler(float Duration)
     {
-
         // Progress bar
         sliderGameObject.SetActive(true);
         sliderForClock.SetDuration(Duration);
-        sliderForClock.Starter();
+        sliderForClock.StartSlider();
     }
 }

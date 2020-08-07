@@ -2,28 +2,28 @@
 
 public class ActivateFPS : MonoBehaviour
 {
-    public ShowFPS ShowFPSScript;
+    public ShowFPS ShowFpsScript;
 
-    public void FPS(bool ShowFPSbool)
+    public void FPS(bool ShowFps)
     {
-        if (ShowFPSbool == true)
+        if (ShowFps == true)
         {
-            ShowFPSScript.enabled = true;
-            ShowFPSScript.ShowFPSCounterFunc(true);
-            ShowFPSScript.ShowFPSCounter = true;
-            ShowFPSScript.Start();
+            ShowFpsScript.enabled = true;
+            ShowFpsScript.ShowFPSCounterFunc(true);
+            ShowFpsScript.ShowFPSCounter = true;
+            ShowFpsScript.Start();
         }
-        else if (ShowFPSbool == false)
+        else if (ShowFps == false)
         {
-            ShowFPSScript.enabled = false;
-            ShowFPSScript.ShowFPSCounterFunc(false);
-            ShowFPSScript.ShowFPSCounter = false;
-            ShowFPSScript.Start();
+            ShowFpsScript.enabled = false;
+            ShowFpsScript.ShowFPSCounterFunc(false);
+            ShowFpsScript.ShowFPSCounter = false;
+            ShowFpsScript.Start();
         }
     }
 
-    public void GO(bool ShowFPSbool)
+    public void GO(bool ShowFps)
     {
-        GameObject.Find("Master").GetComponent<ActivateFPS>().FPS(ShowFPSbool);
+        GameObject.Find("Master").GetComponent<ActivateFPS>().FPS(ShowFps);
     }
 }

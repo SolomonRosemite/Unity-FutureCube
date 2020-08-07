@@ -2,7 +2,7 @@
 
 public class MuteUnmute : MonoBehaviour
 {
-    private GameObject GO;
+    private GameObject myGameObject;
 
     public bool Mute = false;
 
@@ -10,23 +10,10 @@ public class MuteUnmute : MonoBehaviour
 
     void Start()
     {
-        GO = GameObject.FindGameObjectWithTag("OnLoadDestroy");
+        myGameObject = GameObject.FindGameObjectWithTag("OnLoadDestroy");
 
-        MusicSource = GO.GetComponent<AudioSource>();
+        MusicSource = gameObject.GetComponent<AudioSource>();
     }
 
-    public void UnmuteOrMute()
-    {
-        if (Mute == true)
-        {
-            Mute = false;
-
-        }
-        if (Mute == false)
-        {
-            Mute = true;
-
-        }
-
-    }
+    public void UnmuteOrMute() => Mute = !Mute;
 }

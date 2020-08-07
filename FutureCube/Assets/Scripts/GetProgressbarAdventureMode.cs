@@ -9,10 +9,10 @@ public class GetProgressbarAdventureMode : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(Set());
+        StartCoroutine(UpdatePercentage());
     }
 
-    IEnumerator Set()
+    IEnumerator UpdatePercentage()
     {
         yield return new WaitForSeconds(0);
 

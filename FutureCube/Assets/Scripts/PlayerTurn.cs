@@ -86,7 +86,7 @@ public class PlayerTurn : MonoBehaviour
         PlayerRenderer.material.SetColor("_Color", color);
         GroundRenderer.material.SetColor("_Color", colorGround);
 
-        ChangeCamColor.ins.StartReverse = true;
+        ChangeCamColor.ins.startReverse = true;
         FollowPlayer.ins.offset = Offset;
 
         for (int i = 0; i < HidegameObjects.Length; i++)

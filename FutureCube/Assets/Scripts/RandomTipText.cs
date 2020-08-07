@@ -9,6 +9,6 @@ public class RandomTipText : MonoBehaviour
 
     public void Update()
     {
-        TipText.text = PauseV2.pauseV2.TipTextStr;
+        TipText.text = PauseV2.pauseV2.tipTextStr;
     }
 }

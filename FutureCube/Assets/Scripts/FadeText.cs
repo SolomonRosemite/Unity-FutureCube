@@ -6,7 +6,6 @@ public class FadeText : MonoBehaviour
 {
     public float time = 5;
 
-    // can ignore the update, it's just to make the coroutines get called for example
     void Start() => StartCoroutine(FadeTextToFullAlpha(time, GetComponent<Text>()));
 
 

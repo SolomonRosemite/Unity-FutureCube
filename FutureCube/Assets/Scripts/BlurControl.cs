@@ -1,12 +1,9 @@
 using UnityEngine;
-using System.Collections;
 
 public class BlurControl : MonoBehaviour
 {
-
     float value;
 
-    // Use this for initialization
     void Start()
     {
         value = 0.0f;

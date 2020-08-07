@@ -7,11 +7,11 @@ public class SetCursor : MonoBehaviour
     {
         try
         {
-            if (PauseV2.pauseV2.GamePaused)
+            if (PauseV2.pauseV2.gamePaused)
             {
                 Cursor.visible = true;
             }
-            if (PauseV2.pauseV2.GamePaused == false)
+            if (PauseV2.pauseV2.gamePaused == false)
             {
                 // Create a temporary reference to the current scene.
                 Scene currentScene = SceneManager.GetActiveScene();
@@ -26,6 +26,6 @@ public class SetCursor : MonoBehaviour
                 }
             }
         }
-        catch{}
+        catch { }
     }
 }

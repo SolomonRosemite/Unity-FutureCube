@@ -62,7 +62,7 @@ public class LevelJson : MonoBehaviour
         else { File.WriteAllText(Application.persistentDataPath + "/LevelSave.json", JsonWrite); }
     }
 
-    public void JsonLoader()
+    public void ReadJson()
     {
         string JsonRead;
 
@@ -99,20 +99,15 @@ public class LevelJson : MonoBehaviour
 
         if (PcOrPhoneDetect.ins.Platform == 1)
         {
-            // If the Json PlayerData exsist then Load json file
-            if (File.Exists(Application.dataPath + "/LevelSave.json")) { JsonLoader(); }
+            // If the Json PlayerData exists then Load json file
+            if (File.Exists(Application.dataPath + "/LevelSave.json")) { ReadJson(); }
             // If not Create one
             else { CreateJson(); }
         }
         if (PcOrPhoneDetect.ins.Platform == 2)
         {
-            // If the Json PlayerData exsist then Load json file
-            if (File.Exists(Application.persistentDataPath + "/LevelSave.json")) { JsonLoader(); }
-            // If not Create one
+            if (File.Exists(Application.persistentDataPath + "/LevelSave.json")) { ReadJson(); }
             else { CreateJson(); }
-        }
-        else
-        {
         }
     }
 
@@ -123,88 +118,52 @@ public class LevelJson : MonoBehaviour
         switch (SceneLevel)
         {
             case 1:
-                if (Level01 < Score)
-                {
-                    Level01 = Score;
-                }
+                Level01 = Mathf.Max(Level01, Score);
                 break;
             case 2:
-                if (Level02 < Score)
-                {
-                    Level02 = Score;
-                }
+                Level02 = Mathf.Max(Level02, Score);
                 break;
             case 3:
-                if (Level03 < Score)
-                {
-                    Level03 = Score;
-                }
+                Level03 = Mathf.Max(Level03, Score);
                 break;
             case 4:
-                if (Level04 < Score)
-                {
-                    Level04 = Score;
-                }
+                Level04 = Mathf.Max(Level04, Score);
                 break;
             case 5:
-                if (Level05 < Score)
-                {
-                    Level05 = Score;
-                }
+                Level05 = Mathf.Max(Level05, Score);
                 break;
             case 6:
-                if (Level06 < Score)
-                {
-                    Level06 = Score;
-                }
+                Level06 = Mathf.Max(Level06, Score);
                 break;
             case 11:
-                if (Level11 < Score)
-                {
-                    Level11 = Score;
-                }
+                Level11 = Mathf.Max(Level11, Score);
                 break;
             case 12:
-                if (Level12 < Score)
-                {
-                    Level12 = Score;
-                }
+                Level12 = Mathf.Max(Level12, Score);
                 break;
             case 13:
-                if (Level13 < Score)
-                {
-                    Level13 = Score;
-                }
+                Level13 = Mathf.Max(Level13, Score);
                 break;
             case 14:
-                if (Level14 < Score)
-                {
-                    Level14 = Score;
-                }
+                Level14 = Mathf.Max(Level14, Score);
                 break;
             case 15:
-                if (Level15 < Score)
-                {
-                    Level15 = Score;
-                }
+                Level15 = Mathf.Max(Level15, Score);
                 break;
             case 16:
-                if (Level16 < Score)
-                {
-                    Level16 = Score;
-                }
+                Level16 = Mathf.Max(Level16, Score);
                 break;
         }
 
         if (Playername != "Player")
         {
             SetScoreVerified();
-            JsonLoader();
+            ReadJson();
         }
         else
         {
             SetScore();
-            JsonLoader();
+            ReadJson();
         }
 
     }
@@ -414,7 +373,7 @@ public class LevelJson : MonoBehaviour
         }
     }
 
-    public void Setname()
+    public void Updatename()
     {
         LoadJsonFile LJF = new LoadJsonFile();
 

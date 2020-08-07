@@ -15,7 +15,6 @@ public class ButtonManager : MonoBehaviour
     {
         if (Mission.mission.Reward == true)
         {
-            // image.color = ImageColor;
             SelectRandomV2.ins.TurnAllOff();
             RewardImage.enabled = true;
             Mission.mission.Reward = false;

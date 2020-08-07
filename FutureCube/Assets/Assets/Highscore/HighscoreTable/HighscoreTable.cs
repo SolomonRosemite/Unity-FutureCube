@@ -195,7 +195,7 @@ public class HighscoreTable : MonoBehaviour
             entryTransform.Find("nameText").GetComponent<Text>().color = Color.magenta;
         }
 
-        // Set tropy
+        // Set trophy
         switch (rank)
         {
             default:

@@ -144,7 +144,7 @@ public class CollectRandomBox : MonoBehaviour
             }
         }
 
-        if (PauseV2.pauseV2.OverGame == true)
+        if (PauseV2.pauseV2.gameOver == true)
         {
             ItemsReady = false;
 
@@ -190,7 +190,7 @@ public class CollectRandomBox : MonoBehaviour
 
     IEnumerator Reverse()
     {
-        clock.SetSilder(2.5f);
+        clock.SetSidler(2.5f);
 
         UIFade.CallAnimatorBool("FadeOut", true);
 

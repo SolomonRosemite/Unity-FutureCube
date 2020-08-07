@@ -2,14 +2,13 @@ using UnityEngine;
 
 public class EndTrigger : MonoBehaviour
 {
-
     public GameManager gameManager;
 
     public GameObject GameOb;
 
     public void OnTriggerEnter()
     {
-        if (PauseV2.pauseV2.OverGame != true)
+        if (PauseV2.pauseV2.gameOver != true)
         {
             GameManager.gameManager.LevelCompleted = true;
             gameManager.CompleteLevel();

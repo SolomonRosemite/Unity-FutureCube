@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviour
 
     public float restartDelay = 1f;
 
-    public int SceneLevel;
-
     public GameObject completeLevelUI;
 
     [HideInInspector]
@@ -66,10 +64,4 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
-    void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
 }

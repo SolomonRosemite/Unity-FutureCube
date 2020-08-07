@@ -3,7 +3,7 @@
 public class MissionRewardAni : MonoBehaviour
 {
     public static MissionRewardAni ins;
-    public GameObject[] AchievementGameObjects;
+    public GameObject[] achievementGameObjects;
 
     void Start()
     {
@@ -12,19 +12,20 @@ public class MissionRewardAni : MonoBehaviour
 
     public void GetReward(string Mission)
     {
+        print(Mission);
         switch (Mission)
         {
             case "FirstLevelComplete":
-                AchievementGameObjects[0].SetActive(true);
+                achievementGameObjects[0].SetActive(true);
                 break;
             case "FirstTry":
-                AchievementGameObjects[1].SetActive(true);
+                achievementGameObjects[1].SetActive(true);
                 break;
             case "PlayerOutOfMap":
-                AchievementGameObjects[2].SetActive(true);
+                achievementGameObjects[2].SetActive(true);
                 break;
             case "SeasionOneCompleted":
-                AchievementGameObjects[3].SetActive(true);
+                achievementGameObjects[3].SetActive(true);
                 break;
             default:
                 break;

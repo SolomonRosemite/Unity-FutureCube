@@ -1,10 +1,9 @@
-using EZCameraShake;
 using System.Collections;
+using EZCameraShake;
 using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-
     public static PlayerCollision ins;
 
     [HideInInspector]
@@ -120,7 +119,7 @@ public class PlayerCollision : MonoBehaviour
 
         CollectBubble.Player.freezeRotation = false;
 
-        // Deactives the Bubble.
+        // Deactivates the Bubble.
         CollectBubble.ins.BubbleActive = false;
     }
 }

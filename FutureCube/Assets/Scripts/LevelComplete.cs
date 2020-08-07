@@ -1,3 +1,4 @@
+using System.Linq;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -5,7 +6,24 @@ using UnityEngine.SceneManagement;
 
 public class LevelComplete : MonoBehaviour
 {
-    public string NextSence;
+    public string NextScene;
+
+    void Start()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        var levelString = new String(currentScene.Where(Char.IsNumber).ToArray());
+
+        int level = int.Parse(levelString);
+
+        if (level < 10)
+        {
+            NextScene = $"Level0{level + 1}";
+            return;
+        }
+
+        NextScene = $"Level{level + 1}";
+    }
 
     public void LoadNextLevel()
     {
@@ -23,8 +41,8 @@ public class LevelComplete : MonoBehaviour
 
         // Example "Level03" => "03"
         string TEMP = currentScene.name.Substring(currentScene.name.Length - 2);
-        int Last2Level = Int32.Parse(TEMP);
-        LevelJson.levelJson.LevelCompleted(Last2Level, PointSystem.pointSystem.Point);
+        int levelInt = Int32.Parse(TEMP);
+        LevelJson.levelJson.LevelCompleted(levelInt, PointSystem.pointSystem.Point);
 
         if (Level == 6)
         {
@@ -38,7 +56,7 @@ public class LevelComplete : MonoBehaviour
             }
         }
 
-        Mission.mission.SeasionOneCompletedFunc(Last2Level);
+        Mission.mission.SeasionOneCompletedFunc(levelInt);
         StartCoroutine(LoadLevel());
     }
 
@@ -49,7 +67,7 @@ public class LevelComplete : MonoBehaviour
         TriesCounter.triesCounter.ResetCounter();
         LevelPercentageText.levelPercentageText.TempVar = 0;
 
-        SceneManager.LoadScene(NextSence);
+        SceneManager.LoadScene(NextScene);
     }
 
 }

@@ -7,12 +7,10 @@ public class FindMusic : MonoBehaviour
     void Start()
     {
         ins = this;
-
     }
 
     public void Trigger()
     {
-
         try
         {
             GameObject.FindGameObjectWithTag("OnLoadDestroy").GetComponent<MusicTransition>().MusicFadeOut();

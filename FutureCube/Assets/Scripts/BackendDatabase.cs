@@ -1,14 +1,8 @@
 ﻿using System.Collections.Generic;
 using BackendlessAPI.Persistence;
-using BackendlessAPI.Exception;
 using System.Threading.Tasks;
-using System.Globalization;
-using BackendlessAPI.Async;
-using System.Collections;
 using BackendlessAPI;
 using UnityEngine;
-using System.IO;
-using System;
 
 public class BackendDatabase : MonoBehaviour
 {
@@ -25,7 +19,7 @@ public class BackendDatabase : MonoBehaviour
     {
         List<string> HighScores = new List<string>();
 
-        DataQueryBuilder queryBuilder = DataQueryBuilder.Create();
+        DataQueryBuilder queryBuilder = DataQueryBuilder.Create(); // TODO: Handle if PageSize is more than 100
 
         int scoreCount = await Backendless.Data.Of("HighScores").GetObjectCountAsync();
         queryBuilder.SetPageSize(scoreCount);

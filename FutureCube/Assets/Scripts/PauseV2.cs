@@ -5,15 +5,15 @@ public class PauseV2 : MonoBehaviour
 {
     public static PauseV2 pauseV2;
     public AudioMixer mainMixer;
-    public GameObject GameOverUI;
-    public GameObject PauseUI;
+    public GameObject gameOverUI;
+    public GameObject pauseUI;
 
-    public bool GamePaused = false;
-    public string TipTextStr;
-    public bool OverGame = false;
+    public bool gamePaused = false;
+    public string tipTextStr;
+    public bool gameOver = false;
 
     private AudioSource audioSource;
-    private int num;
+    private int tipIndex;
 
     private void Start()
     {
@@ -21,7 +21,7 @@ public class PauseV2 : MonoBehaviour
         normalAudio();
         audioSource = GameObject.FindGameObjectWithTag("OnLoadDestroy").GetComponent<AudioSource>();
 
-        Check();
+        updateTip();
 
         try { audioSource = GameObject.FindGameObjectWithTag("OnLoadDestroy").GetComponent<AudioSource>(); } catch { }
     }
@@ -30,9 +30,9 @@ public class PauseV2 : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            if (GamePaused == true)
+            if (gamePaused == true)
             {
-                Check();
+                updateTip();
                 Resume();
             }
             else
@@ -40,7 +40,7 @@ public class PauseV2 : MonoBehaviour
                 Pause();
             }
         }
-        if (OverGame == true)
+        if (gameOver == true)
         {
             muffledAudio();
             try
@@ -65,8 +65,8 @@ public class PauseV2 : MonoBehaviour
         normalAudio();
         GameObject.FindGameObjectWithTag("OnLoadDestroy").GetComponent<AudioSource>().bypassEffects = true;
         Time.timeScale = 1;
-        PauseUI.SetActive(false);
-        GamePaused = false;
+        pauseUI.SetActive(false);
+        gamePaused = false;
         Cursor.visible = false;
     }
 
@@ -75,34 +75,34 @@ public class PauseV2 : MonoBehaviour
         muffledAudio();
         GameObject.FindGameObjectWithTag("OnLoadDestroy").GetComponent<AudioSource>().bypassEffects = false;
         Time.timeScale = 0;
-        PauseUI.SetActive(true);
-        GamePaused = true;
+        pauseUI.SetActive(true);
+        gamePaused = true;
         Cursor.visible = true;
     }
 
-    public void Check()
+    public void updateTip()
     {
-        num = Random.Range(1, 6);
+        tipIndex = Random.Range(1, 6);
 
-        if (num == 1)
+        if (tipIndex == 1)
         {
-            TipTextStr = "Tip: Sometimes picking up a coin is not a good idea";
+            tipTextStr = "Tip: Sometimes picking up a coin is not a good idea";
         }
-        if (num == 2)
+        if (tipIndex == 2)
         {
-            TipTextStr = "Tip: If you Suck at a Level maybe just take a break";
+            tipTextStr = "Tip: If you Suck at a Level maybe just take a break";
         }
-        if (num == 3)
+        if (tipIndex == 3)
         {
-            TipTextStr = "Tip: In Future you can get Coins to Skips Levels. Maybe...";
+            tipTextStr = "Tip: In Future you can get Coins to Skips Levels. Maybe...";
         }
-        if (num == 4)
+        if (tipIndex == 4)
         {
-            TipTextStr = "Tip: You get Extra Points for collecting Coins";
+            tipTextStr = "Tip: You get Extra Points for collecting Coins";
         }
-        if (num == 5)
+        if (tipIndex == 5)
         {
-            TipTextStr = "Tip: Finishing with a bubble gets you Extra Points";
+            tipTextStr = "Tip: Finishing with a bubble gets you Extra Points";
         }
 
     }
@@ -110,7 +110,7 @@ public class PauseV2 : MonoBehaviour
     public void Reload()
     {
         GameObject.Find("LevelChanger").GetComponent<LevelChanger>().MainFadeStarter("Reload");
-        GameOverUI.SetActive(false);
+        gameOverUI.SetActive(false);
         Time.timeScale = 1;
     }
 
@@ -125,9 +125,9 @@ public class PauseV2 : MonoBehaviour
             PlayerMovePhone.playerMovement.GameOver = true;
         }
 
-        OverGame = true;
+        gameOver = true;
         Cursor.visible = true;
-        GameOverUI.SetActive(true);
+        gameOverUI.SetActive(true);
         Time.timeScale = .4f;
     }
 

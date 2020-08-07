@@ -14,7 +14,7 @@ public class ChangeCamColor : MonoBehaviour
     public float Speed;
 
     [HideInInspector]
-    public bool StartReverse = false;
+    public bool startReverse = false;
 
     private bool StartRotate = true;
 
@@ -27,11 +27,11 @@ public class ChangeCamColor : MonoBehaviour
 
     void Update()
     {
-        if (StartReverse == true)
+        if (startReverse == true)
         {
             float t = Mathf.PingPong(Time.time, duration) / duration;
             cam.backgroundColor = Color.Lerp(color1, color2, t);
-            
+
             if (StartRotate == true)
             {
                 tr.Rotate(Vector3.up, 10.0f * Time.deltaTime * Speed);
@@ -42,7 +42,7 @@ public class ChangeCamColor : MonoBehaviour
                 }
             }
 
-            if (StartReverse == false)
+            if (startReverse == false)
             {
                 tr.rotation = Quaternion.identity;
             }

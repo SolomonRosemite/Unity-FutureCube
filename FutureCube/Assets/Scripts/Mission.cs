@@ -6,12 +6,9 @@ public class Mission : MonoBehaviour
 
     [HideInInspector] public bool Reward;
 
-    void Start()
-    {
-        mission = this;
-    }
+    void Start() => mission = this;
 
-    // Give the Achievement Only once obviously ( Do Some Json in "LevelJson" )
+    // When Player Completes the First Level
     public void FirstLevelCompleteFunc()
     {
         if (LevelJson.levelJson.FirstLevelComplete != true)
@@ -28,6 +25,7 @@ public class Mission : MonoBehaviour
         LevelJson.levelJson.JsonFirstLevelComplete(true);
     }
 
+    // When Player Completes a Level without fail
     public void FirstTryFunc()
     {
 
@@ -48,6 +46,7 @@ public class Mission : MonoBehaviour
         }
     }
 
+    // When Player has fallen off the Platfrom
     public void PlayerOutOfMapFunc()
     {
         if (LevelJson.levelJson.PlayerOutOfMap != true)
@@ -66,6 +65,7 @@ public class Mission : MonoBehaviour
         LevelJson.levelJson.JsonPlayerOutOfMapFunc(true);
     }
 
+    // When Player Completes the first Season
     public void SeasionOneCompletedFunc(int SceneNum)
     {
         if (SceneNum == 06)
@@ -80,7 +80,6 @@ public class Mission : MonoBehaviour
                 LoadJson.loadJson.JsonEditV_Coins(3000);
 
             }
-
             // Complete Seasion One
             LevelJson.levelJson.JsonSeasionOneCompletedFunc(true);
         }

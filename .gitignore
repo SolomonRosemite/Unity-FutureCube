@@ -1,5 +1,7 @@
 ###
 GenerateCredentials.cs
+LevelSave.json
+PlayerChocolateSave.json
 # Unity folders and files
 ###
 [Aa]ssets/AssetStoreTools*

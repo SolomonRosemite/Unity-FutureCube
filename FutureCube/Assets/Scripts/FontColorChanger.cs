@@ -8,7 +8,6 @@ public class FontColorChanger : MonoBehaviour
 
     private float Timer;
 
-    // Update is called once per frame
     void Update()
     {
         Timer = 12 * (Time.deltaTime * Speed);

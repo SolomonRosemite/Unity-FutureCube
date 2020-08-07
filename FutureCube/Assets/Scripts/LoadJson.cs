@@ -49,13 +49,11 @@ public class LoadJson : MonoBehaviour
 
     void Update()
     {
-
         // Create a temporary reference to the current scene.
         Scene currentScene = SceneManager.GetActiveScene();
 
         if ("Adventure Mode Select Lvl" == currentScene.name)
         {
-
             if (LevelComplete > 6)
             {
                 GameObject.Find("Level 2").GetComponent<Button>().enabled = true;
@@ -256,10 +254,10 @@ public class LoadJson : MonoBehaviour
         if (PcOrPhoneDetect.ins.Platform == 1) { File.WriteAllText(Application.dataPath + "/PlayerChocolateSave.json", JsonWrite); }
         else { File.WriteAllText(Application.persistentDataPath + "/PlayerChocolateSave.json", JsonWrite); }
 
-        JsonLoader();
+        ReadJson();
     }
 
-    public void JsonLoader()
+    public void ReadJson()
     {
         string JsonRead;
 
@@ -268,7 +266,7 @@ public class LoadJson : MonoBehaviour
 
         LoadJsonFile loadedPlayer = JsonUtility.FromJson<LoadJsonFile>(JsonRead);
 
-        // All after Vars here
+        // Apply Saved data
         LevelComplete = loadedPlayer.LevelComplete;
         Volume = loadedPlayer.Volume;
         MusicOnOff = loadedPlayer.MusicOnOff;
@@ -288,16 +286,14 @@ public class LoadJson : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         if (PcOrPhoneDetect.ins.Platform == 1)
         {
-            // If the Json PlayerData exsist then Load json file
-            if (File.Exists(Application.dataPath + "/PlayerChocolateSave.json")) { JsonLoader(); }
+            // If the Json PlayerData exists then Load json file
+            if (File.Exists(Application.dataPath + "/PlayerChocolateSave.json")) { ReadJson(); }
             // If not Create one
             else { CreateJson(); }
         }
         if (PcOrPhoneDetect.ins.Platform == 2)
         {
-            // If the Json PlayerData exsist then Load json file
-            if (File.Exists(Application.persistentDataPath + "/PlayerChocolateSave.json")) { JsonLoader(); SetAudioLevels.ins.SetLevelForPhone(); }
-            // If not Create one
+            if (File.Exists(Application.persistentDataPath + "/PlayerChocolateSave.json")) { ReadJson(); SetAudioLevels.ins.SetLevelForPhone(); }
             else { CreateJson(); }
         }
         else
@@ -308,7 +304,7 @@ public class LoadJson : MonoBehaviour
     }
 
 
-    //Edits
+    // Edits
     public void JsonEditCompletedLevel(int CompletedLevelnumber)
     {
         LoadJsonFile LJF = new LoadJsonFile();
@@ -381,7 +377,7 @@ public class LoadJson : MonoBehaviour
         LJF.CurrentSkin = CurrentSkin;
         LJF.V_Coins = V_Coins;
 
-        LevelJson.levelJson.Setname();
+        LevelJson.levelJson.Updatename();
 
         string JsonWrite = JsonUtility.ToJson(LJF, true);
         if (PcOrPhoneDetect.ins.Platform == 1) { File.WriteAllText(Application.dataPath + "/PlayerChocolateSave.json", JsonWrite); }

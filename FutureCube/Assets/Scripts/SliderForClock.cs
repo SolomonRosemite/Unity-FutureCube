@@ -20,12 +20,12 @@ public class SliderForClock : MonoBehaviour
         time = Duration;
     }
 
-    public void Starter()
+    public void StartSlider()
     {
-        StartCoroutine(Trash());
+        StartCoroutine(Slide());
     }
 
-    public IEnumerator Trash()
+    public IEnumerator Slide()
     {
         while (time > 0)
         {

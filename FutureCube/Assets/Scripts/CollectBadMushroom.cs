@@ -46,7 +46,7 @@ public class CollectBadMushroom : MonoBehaviour
 
     IEnumerator ReversePlayerMovement()
     {
-        clock.SetSilder(3);
+        clock.SetSidler(3);
 
         //UIFade.CallAnimatorBool("FadeOut", true);
 

@@ -2,37 +2,40 @@
 
 public class MovingObstacle : MonoBehaviour
 {
+    public Transform transformObstacle;
+    public Rigidbody rigidbodyObstacle;
 
-    public Transform TransformObstacle;
-    public Rigidbody RigidbodyObstacle;
+    public float speed;
+    public float leftEnd;
+    public float rightEnd;
 
-    public float Speed;
-    public float LeftEnd;
-    public float RightEnd;
+    private bool rightOrLeft;
 
-    private bool RightLeft;
-
+    // Moves the Obstacle Left and Right
     private void FixedUpdate()
     {
-        
-        if (TransformObstacle.position.x >= RightEnd)
+        if (rigidbodyObstacle == null)
         {
-            RightLeft = true;
+            print(gameObject.name);
         }
-        
-        if (TransformObstacle.position.x <= LeftEnd)
+        if (transformObstacle.position.x >= rightEnd)
         {
-            RightLeft = false;
+            rightOrLeft = true;
         }
 
-        if (RightLeft == true)
+        if (transformObstacle.position.x <= leftEnd)
         {
-            RigidbodyObstacle.AddForce(-Speed * Time.deltaTime, 0, 0);
+            rightOrLeft = false;
         }
 
-        if (RightLeft == false)
+        if (rightOrLeft == true)
         {
-            RigidbodyObstacle.AddForce(Speed * Time.deltaTime, 0, 0);
+            rigidbodyObstacle.AddForce(-speed * Time.deltaTime, 0, 0);
+        }
+
+        if (rightOrLeft == false)
+        {
+            rigidbodyObstacle.AddForce(speed * Time.deltaTime, 0, 0);
         }
 
     }
