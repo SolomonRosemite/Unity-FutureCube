@@ -12,7 +12,7 @@ public class LevelPercentageText : MonoBehaviour
 
     [HideInInspector]
     public float TempVar;
-    private string TempVarv2;
+    private string TempVar2;
 
     private void Start()
     {
@@ -22,7 +22,7 @@ public class LevelPercentageText : MonoBehaviour
     void Update()
     {
         TempVar = (Player.position.z / Meters) * 100;
-        TempVarv2 = TempVar.ToString("0") + "%";
+        TempVar2 = TempVar.ToString("0") + "%";
 
 
         if (TempVar < -0.8f)
@@ -32,7 +32,7 @@ public class LevelPercentageText : MonoBehaviour
 
         if (TempVar > 0)
         {
-            Location.text = TempVarv2;
+            Location.text = TempVar2;
         }
 
     }

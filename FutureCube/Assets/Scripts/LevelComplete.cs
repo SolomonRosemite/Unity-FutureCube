@@ -16,7 +16,12 @@ public class LevelComplete : MonoBehaviour
 
         int level = int.Parse(levelString);
 
-        if (level < 10)
+        if (level == 6)
+        {
+            NextScene = $"Thanks for Playing Cube";
+            return;
+        }
+        else if (level < 10)
         {
             NextScene = $"Level0{level + 1}";
             return;

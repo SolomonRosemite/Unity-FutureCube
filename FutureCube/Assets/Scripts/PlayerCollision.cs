@@ -58,7 +58,7 @@ public class PlayerCollision : MonoBehaviour
         {
             if (collisionInfo.collider.name == HardPlayerController.ins.StartHardPlayerController)
             {
-                print("Test");
+                print("null");
             }
         }
         catch { }
