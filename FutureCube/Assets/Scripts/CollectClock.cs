@@ -42,12 +42,21 @@ public class CollectClock : MonoBehaviour
     {
         try { sliderGameObject.SetActive(false); } catch { }
 
+
         ins = this;
 
         Cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        audioSource = GameObject.FindGameObjectWithTag("OnLoadDestroy").GetComponent<AudioSource>();
 
         StartPOV = Cam.fieldOfView;
+
+        // If in Debug mode
+        if (Application.platform != RuntimePlatform.WindowsEditor)
+        {
+            audioSource = GameObject.FindGameObjectWithTag("OnLoadDestroy").GetComponent<AudioSource>();
+            return;
+        }
+
+        audioSource = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
     }
 
     private void Update()

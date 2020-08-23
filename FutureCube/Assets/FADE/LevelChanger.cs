@@ -37,6 +37,8 @@ public class LevelChanger : MonoBehaviour
 
     public void FadeToLevel(string levelIndex)
     {
+        // Todo: Remove This value after Debuging is done
+        levelIndex = ("Play No Limit");
         levelToLoad = levelIndex;
         animator.SetTrigger("FadeOut");
     }

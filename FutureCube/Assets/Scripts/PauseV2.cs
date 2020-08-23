@@ -19,11 +19,19 @@ public class PauseV2 : MonoBehaviour
     {
         pauseV2 = this;
         normalAudio();
-        audioSource = GameObject.FindGameObjectWithTag("OnLoadDestroy").GetComponent<AudioSource>();
 
         updateTip();
 
         try { audioSource = GameObject.FindGameObjectWithTag("OnLoadDestroy").GetComponent<AudioSource>(); } catch { }
+
+        // If in Debug mode
+        if (Application.platform != RuntimePlatform.WindowsEditor)
+        {
+            audioSource = GameObject.FindGameObjectWithTag("OnLoadDestroy").GetComponent<AudioSource>();
+            return;
+        }
+
+        audioSource = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
     }
 
     void Update()

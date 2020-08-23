@@ -52,5 +52,6 @@
         "ProjectSettings/":true,
         "temp/":true,
         "Temp/":true
-    }
+    },
+    "compile-hero.disable-compile-files-on-did-save-code": false
 }
