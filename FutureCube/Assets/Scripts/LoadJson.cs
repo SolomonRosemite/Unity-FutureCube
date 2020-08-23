@@ -38,7 +38,7 @@ public class LoadJson : MonoBehaviour
 
     [HideInInspector] public byte SkinCountLJF = SkinCount;
 
-    [HideInInspector] public const float Version = 1.85f;
+    [HideInInspector] public const float Version = 1.6f;
     [HideInInspector] public bool UpdateAvailable;
 
     void Start()
@@ -293,8 +293,10 @@ public class LoadJson : MonoBehaviour
         }
         if (PcOrPhoneDetect.ins.Platform == 2)
         {
-            if (File.Exists(Application.persistentDataPath + "/PlayerChocolateSave.json")) { ReadJson(); SetAudioLevels.ins.SetLevelForPhone(); }
-            else { CreateJson(); }
+            if (File.Exists(Application.persistentDataPath + "/PlayerChocolateSave.json"))
+            { ReadJson(); SetAudioLevels.ins.SetLevelForPhone(); }
+
+            else { CreateJson(); SetAudioLevels.ins.SetLevelForPhone(); }
         }
         else
         {
