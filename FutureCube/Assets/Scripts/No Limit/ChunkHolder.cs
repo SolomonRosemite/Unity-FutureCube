@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class ChunkHolder : MonoBehaviour
 {
-    public bool firstChunk = false;
     Chunk chunk;
 
     void Start()
     {
-        if (firstChunk == true) { chunk = new Chunk(0, 0); }
+        StartCoroutine(LateStart(.5f));
     }
 
-    public void updateChunkValues(Chunk chunk)
+    IEnumerator LateStart(float waitTime)
     {
-        this.chunk = chunk;
+        yield return new WaitForSeconds(waitTime);
+        if (ChunkManager.ins.PreviousId == -1) { chunk = new Chunk(0, 0); }
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        ChunkManager.ins.OnEnterNewChunk(this.gameObject, chunk);
-    }
+    public void updateChunkValues(Chunk chunk) => this.chunk = chunk;
+
+    private void OnCollisionEnter(Collision other) => ChunkManager.ins.OnEnterNewChunk(this.gameObject, chunk);
 }
