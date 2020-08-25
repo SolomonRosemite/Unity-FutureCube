@@ -6,10 +6,7 @@ public class ChunkHolder : MonoBehaviour
 {
     Chunk chunk;
 
-    void Start()
-    {
-        StartCoroutine(LateStart(.5f));
-    }
+    void Start() => StartCoroutine(LateStart(.5f));
 
     IEnumerator LateStart(float waitTime)
     {
