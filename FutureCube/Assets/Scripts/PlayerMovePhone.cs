@@ -53,7 +53,7 @@ public class PlayerMovePhone : MonoBehaviour
                 }
             }
 
-            if (rb.position.y < -1f)
+            if (rb.position.y < -3f)
             {
                 Mission.mission.PlayerOutOfMapFunc();
                 FindObjectOfType<GameManager>().EndGame();

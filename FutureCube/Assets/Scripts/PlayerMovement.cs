@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
             }
 
-            if (rb.position.y < -1f)
+            if (rb.position.y < -3f)
             {
                 if (backToMenu is false)
                 {

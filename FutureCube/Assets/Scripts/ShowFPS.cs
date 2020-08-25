@@ -8,6 +8,8 @@ public class ShowFPS : MonoBehaviour
     private float deltaTime;
     private float fps;
 
+    private byte coolDown = 0;
+
     public void Start()
     {
         if (ShowFPSCounter != true)
@@ -26,7 +28,11 @@ public class ShowFPS : MonoBehaviour
         deltaTime += Time.deltaTime;
         deltaTime /= 2.0f;
         fps = 1.0f / deltaTime;
-        FPSText.text = "FPS: " + fps.ToString("0");
+        if (++coolDown > 10)
+        {
+            FPSText.text = "FPS: " + fps.ToString("0");
+            coolDown = 0;
+        }
     }
 
     public void ShowFPSCounterFunc(bool Yes)
