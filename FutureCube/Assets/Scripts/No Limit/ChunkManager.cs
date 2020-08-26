@@ -15,18 +15,18 @@ public class ChunkManager : MonoBehaviour
 
     public void OnEnterNewChunk(GameObject go, Chunk chunk)
     {
-        if (PreviousId == chunk.ChunkId) { return; }
+        if (PreviousId == chunk.Id) { return; }
 
         var position = go.transform.position;
         float z = position.z + go.transform.localScale.z;
 
-        PreviousId = chunk.ChunkId;
+        PreviousId = chunk.Id;
 
         queueOfChunks.Enqueue(go);
-        print(chunk.ChunkId);
+        print(chunk.Id);
 
         CreateChunk(
-            new Chunk(chunk.ChunkId + 1, chunk.Difficulty),
+            new Chunk(chunk.Id + 1, chunk.Difficulty),
             new Vector3(position.x, position.y - 0.03f, z)
         );
 

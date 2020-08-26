@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
@@ -14,7 +13,7 @@ public class ObstacleGroupManager : MonoBehaviour
     void Start()
     {
         // Get Random number and assign that number to the localScale z scale of the greenZone.
-        int zScale = new System.Random().Next(10, 35);
+        int zScale = new System.Random().Next(20, 55);
 
         Vector3 greenZoneVector = greenZone.localScale;
         greenZoneVector.z = zScale;
@@ -36,7 +35,7 @@ public class ObstacleGroupManager : MonoBehaviour
         whiteZonePosition.z = blueZone.position.z;
 
         whiteZonePosition.z -= whiteZone.localScale.z / 2;
-        whiteZonePosition.z -= 10;
+        whiteZonePosition.z -= blueZone.localScale.z / 2;
 
         whiteZone.position = whiteZonePosition;
 
@@ -45,7 +44,7 @@ public class ObstacleGroupManager : MonoBehaviour
         greenZonePosition.z = blueZone.position.z;
 
         greenZonePosition.z -= greenZone.localScale.z / 2;
-        greenZonePosition.z -= 10 + whiteZone.localScale.z;
+        greenZonePosition.z -= blueZone.localScale.z / 2 + whiteZone.localScale.z;
 
         greenZone.position = greenZonePosition;
     }
