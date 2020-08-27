@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Score : MonoBehaviour {
+public class Score : MonoBehaviour
+{
 
-	public Transform player;
-	public Text scoreText;
-	
-    private float Temp;
-	// Update is called once per frame
-	void Update () {
+    public Transform player;
+    public Text scoreText;
+    private float pos;
 
-        Temp = player.position.z;
+    void Update()
+    {
+        pos = (player.position.z - 10);
 
-        scoreText.text = Temp.ToString("0");
-	}
+        if (pos > 0) { scoreText.text = pos.ToString("0"); }
+    }
 }
