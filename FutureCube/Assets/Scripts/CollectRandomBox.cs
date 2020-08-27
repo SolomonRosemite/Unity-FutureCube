@@ -67,7 +67,7 @@ public class CollectRandomBox : MonoBehaviour
         audioSource.clip = AudioClips[0];
         audioSource.Play();
 
-        // (We have "Unluky 2 times to Higher the probability :D")
+        // (We have "Unlucky 2 times to Higher the probability :D")
         switch (index)
         {
             case 0:

@@ -23,7 +23,6 @@ public class ChunkManager : MonoBehaviour
         PreviousId = chunk.Id;
 
         queueOfChunks.Enqueue(go);
-        print(chunk.Id);
 
         CreateChunk(
             new Chunk(chunk.Id + 1, chunk.Difficulty),
