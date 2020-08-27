@@ -8,7 +8,7 @@ public class ObstacleGroupManager : MonoBehaviour
     public Transform whiteZone;
     public Transform greenZone;
 
-    const int length = 500;
+    private const int length = 500;
 
     void Start()
     {
