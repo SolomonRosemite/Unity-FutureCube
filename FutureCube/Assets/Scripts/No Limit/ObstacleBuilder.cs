@@ -10,10 +10,10 @@ public class ObstacleBuilder : MonoBehaviour
 
     [Space]
 
-    public UnityEngine.Object obstacle;
-    public UnityEngine.Object move;
-    public UnityEngine.Object house;
-    public UnityEngine.Object row;
+    public GameObject obstacle;
+    public GameObject move;
+    public GameObject house;
+    public GameObject row;
 
     void Start() => StartCoroutine(LateStart(.5f));
 
@@ -26,7 +26,7 @@ public class ObstacleBuilder : MonoBehaviour
 
         if (components.Count != 0)
         {
-            BuildObstacles(components);
+            BuildObstacles(components, chunk.Id);
         }
     }
 
@@ -43,7 +43,7 @@ public class ObstacleBuilder : MonoBehaviour
             case ChunkDifficulty.easy:
                 for (int i = 0; i < length; i++)
                 {
-                    components.Add(new ObstacleComponent(row, ChunkDifficulty.easy, Vector3.zero));
+                    components.Add(new ObstacleComponent(obstacle, ChunkDifficulty.easy, Vector3.zero));
                 }
                 break;
             case ChunkDifficulty.medium:
@@ -63,20 +63,30 @@ public class ObstacleBuilder : MonoBehaviour
         return components;
     }
 
-    private void BuildObstacles(List<ObstacleComponent> components)
+    private void BuildObstacles(List<ObstacleComponent> components, int id)
     {
-        int z = 0;
+        Vector3 pos = gameObject.transform.position;
+        GameObject mainParent = GameObject.Find($"Chunk {id}");
 
-        foreach (var component in components)
+        string name = transform.parent.name;
+
+        name = name.Substring(name.Length - 1);
+
+        GameObject group = new GameObject(name);
+        group.transform.parent = mainParent.transform;
+
+        print(group.name);
+
+        for (int i = 0; i < components.Count; i++)
         {
-            print(z);
-            GameObject item = Instantiate(
-                component.Prefab,
-                component.Vector != Vector3.zero ? component.Vector : new Vector3(0.447f, 1, 1.61009f),
-                new Quaternion(), gameObject.transform
-                ) as GameObject;
-            z++;
-            return;
+            Vector3 componentPos = pos + new Vector3(1, 3, 100 * i);
+
+            Instantiate(
+                components[i].Prefab,
+                componentPos,
+                new Quaternion(),
+                group.transform
+            );
         }
     }
 }

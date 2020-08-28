@@ -15,12 +15,17 @@ public class ChunkManager : MonoBehaviour
 
     public void OnEnterNewChunk(GameObject go, Chunk chunk)
     {
+        return;
         if (PreviousId == chunk.Id) { return; }
 
         var position = go.transform.position;
         float z = position.z + go.transform.localScale.z;
 
         PreviousId = chunk.Id;
+
+        if (PreviousId > 2)
+            return;
+
 
         queueOfChunks.Enqueue(go);
 
@@ -29,7 +34,7 @@ public class ChunkManager : MonoBehaviour
             new Vector3(position.x, position.y - 0.03f, z)
         );
 
-        UnloadChunk();
+        // UnloadChunk();
     }
 
     private void CreateChunk(Chunk values, Vector3 position)
@@ -40,8 +45,13 @@ public class ChunkManager : MonoBehaviour
         chunkHolder.updateChunkValues(values);
     }
 
-    private void UnloadChunk()
+    private void UnloadChunk(int id)
     {
-        if (queueOfChunks.Count > 2) { Destroy(queueOfChunks.Dequeue()); }
+        // TODO: Unload Chunk Obstacles
+        if (queueOfChunks.Count > 2)
+        {
+            Destroy(queueOfChunks.Dequeue());
+            // Destroy(GameObject.Find($"Chunk {chunk.id}"));
+        }
     }
 }
