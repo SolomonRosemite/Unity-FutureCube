@@ -12,6 +12,7 @@ public class ChunkManager : MonoBehaviour
     private Queue<GameObject> queueOfChunks = new Queue<GameObject>();
 
     private const string playerGameObjectTag = "PlayerPcOrPhone";
+    private const float chunkDropOff = 0.03f;
 
     void Start() => ins = this;
 
@@ -33,7 +34,7 @@ public class ChunkManager : MonoBehaviour
 
         CreateChunk(
             new Chunk(chunk.Id + 1, chunk.Difficulty),
-            new Vector3(position.x, position.y - 0.03f, z)
+            new Vector3(position.x, position.y - chunkDropOff, z)
         );
 
         UnloadChunk();

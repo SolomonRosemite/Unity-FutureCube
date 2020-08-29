@@ -15,6 +15,8 @@ public class ObstacleBuilder : MonoBehaviour
     public GameObject house;
     public GameObject row;
 
+    private readonly System.Random getRandom = new System.Random();
+
     void Start() => StartCoroutine(LateStart(.5f));
 
     IEnumerator LateStart(float waitSeconds)
@@ -22,7 +24,7 @@ public class ObstacleBuilder : MonoBehaviour
         yield return new WaitForSeconds(waitSeconds);
         chunk = parent.GetComponent<ChunkHolder>().chunk;
 
-        var components = GetObstacles(chunk.Difficulty);
+        var components = GetObstacleComponets(chunk.Difficulty);
 
         if (components.Count != 0)
         {
@@ -30,21 +32,15 @@ public class ObstacleBuilder : MonoBehaviour
         }
     }
 
-    private List<ObstacleComponent> GetObstacles(ChunkDifficulty difficulty)
+    private List<ObstacleComponent> GetObstacleComponets(ChunkDifficulty difficulty)
     {
         List<ObstacleComponent> components = new List<ObstacleComponent>();
 
         int length = (int)(gameObject.transform.localScale.z / 100);
 
-        // Todo: When Choosing a difficulty Randomize it with the others.
-        /* Example:
-           difficulty = ChunkDifficulty.medium
-           length = 3
-           
-           i = 0 => new ObstacleComponent with medium difficulty
-           i = 1 => new ObstacleComponent with easy difficulty
-           i = 2 => new ObstacleComponent with hard difficulty
-        */
+        int min = 0;
+        int max = 100;
+
         switch (difficulty)
         {
             case ChunkDifficulty.none:
@@ -52,19 +48,111 @@ public class ObstacleBuilder : MonoBehaviour
             case ChunkDifficulty.easy:
                 for (int i = 0; i < length; i++)
                 {
-                    components.Add(new ObstacleComponent(obstacle, ChunkDifficulty.easy, Vector3.zero));
+                    ChunkDifficulty chunkDifficulty = difficulty;
+
+                    if (i == 0)
+                    {
+                        components.Add(new ObstacleComponent(obstacle, difficulty));
+                        continue;
+                    }
+
+                    if (components[i - 1].Difficulty == ChunkDifficulty.hard)
+                    {
+                        components.Add(
+                            new ObstacleComponent(
+                            GetObstacleGroupComponent(ChunkDifficulty.easy),
+                            ChunkDifficulty.easy
+                        ));
+
+                        continue;
+                    }
+
+                    int value = GetRandomNumber(min, max);
+
+                    if (value <= 7)
+                        chunkDifficulty = ChunkDifficulty.hard;
+                    else if (value <= 25)
+                        chunkDifficulty = ChunkDifficulty.medium;
+
+                    components.Add(
+                        new ObstacleComponent(GetObstacleGroupComponent(chunkDifficulty), chunkDifficulty)
+                    );
                 }
                 break;
             case ChunkDifficulty.medium:
                 for (int i = 0; i < length; i++)
                 {
+                    ChunkDifficulty chunkDifficulty = difficulty;
 
+                    if (i == 0)
+                    {
+                        components.Add(new ObstacleComponent(obstacle, difficulty));
+                        continue;
+                    }
+
+                    if (components[i - 1].Difficulty == ChunkDifficulty.hard)
+                    {
+                        int rng = GetRandomNumber(0, 2);
+
+                        components.Add(
+                            new ObstacleComponent(
+                            GetObstacleGroupComponent(rng == 0 ? ChunkDifficulty.easy : ChunkDifficulty.medium),
+                            rng == 0 ? ChunkDifficulty.easy : ChunkDifficulty.medium
+                        ));
+
+                        continue;
+                    }
+
+                    int value = GetRandomNumber(min, max);
+
+                    if (value <= 15)
+                        chunkDifficulty = ChunkDifficulty.hard;
+                    else if (value <= 70)
+                        chunkDifficulty = ChunkDifficulty.medium;
+                    else
+                        chunkDifficulty = ChunkDifficulty.easy;
+
+                    components.Add(
+                        new ObstacleComponent(GetObstacleGroupComponent(chunkDifficulty), chunkDifficulty)
+                    );
                 }
                 break;
             case ChunkDifficulty.hard:
                 for (int i = 0; i < length; i++)
                 {
+                    ChunkDifficulty chunkDifficulty = difficulty;
 
+                    if (i == 0)
+                    {
+                        components.Add(new ObstacleComponent(obstacle, difficulty));
+                        continue;
+                    }
+
+                    if (components[i - 1].Difficulty == ChunkDifficulty.hard)
+                    {
+                        int rng = GetRandomNumber(0, 2);
+
+                        components.Add(
+                            new ObstacleComponent(
+                            GetObstacleGroupComponent(rng == 0 ? ChunkDifficulty.easy : ChunkDifficulty.medium),
+                            rng == 0 ? ChunkDifficulty.easy : ChunkDifficulty.medium
+                        ));
+
+                        continue;
+                    }
+
+                    int value = GetRandomNumber(min, max);
+
+                    if (value <= 45)
+                        chunkDifficulty = ChunkDifficulty.hard;
+                    else if (value <= 85)
+                        chunkDifficulty = ChunkDifficulty.medium;
+                    else
+                        chunkDifficulty = ChunkDifficulty.easy;
+
+                    components.Add(
+                        new ObstacleComponent(GetObstacleGroupComponent(chunkDifficulty), chunkDifficulty)
+                    );
                 }
                 break;
         }
@@ -98,5 +186,31 @@ public class ObstacleBuilder : MonoBehaviour
                 mainParent.transform
             );
         }
+    }
+
+    private int GetRandomNumber(int min, int max)
+    {
+        lock (getRandom)
+        {
+            return getRandom.Next(min, max);
+        }
+    }
+
+    private GameObject GetObstacleGroupComponent(ChunkDifficulty difficulty)
+    {
+        switch (difficulty)
+        {
+            case ChunkDifficulty.none:
+                return new GameObject();
+            case ChunkDifficulty.easy:
+                break;
+            case ChunkDifficulty.medium:
+                break;
+            case ChunkDifficulty.hard:
+                break;
+        }
+
+        // Todo: Return ObstacleGroupComponent depending on difficulty
+        return obstacle;
     }
 }
