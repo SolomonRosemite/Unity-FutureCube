@@ -36,6 +36,15 @@ public class ObstacleBuilder : MonoBehaviour
 
         int length = (int)(gameObject.transform.localScale.z / 100);
 
+        // Todo: When Choosing a difficulty Randomize it with the others.
+        /* Example:
+           difficulty = ChunkDifficulty.medium
+           length = 3
+           
+           i = 0 => new ObstacleComponent with medium difficulty
+           i = 1 => new ObstacleComponent with easy difficulty
+           i = 2 => new ObstacleComponent with hard difficulty
+        */
         switch (difficulty)
         {
             case ChunkDifficulty.none:
@@ -65,27 +74,28 @@ public class ObstacleBuilder : MonoBehaviour
 
     private void BuildObstacles(List<ObstacleComponent> components, int id)
     {
-        Vector3 pos = gameObject.transform.position;
         GameObject mainParent = GameObject.Find($"Chunk {id}");
+        Vector3 pos = transform.position;
 
-        string name = transform.parent.name;
+        // Shift the z Position
+        var greenZone = transform.parent.GetComponent<ObstacleGroupManager>().greenZone;
 
-        name = name.Substring(name.Length - 1);
+        pos = new Vector3(
+            pos.x,
+            pos.y,
+            greenZone.position.z + greenZone.localScale.z / 2 + 1
+        );
 
-        GameObject group = new GameObject(name);
-        group.transform.parent = mainParent.transform;
-
-        print(group.name);
-
+        Vector3 componentPos;
         for (int i = 0; i < components.Count; i++)
         {
-            Vector3 componentPos = pos + new Vector3(1, 3, 100 * i);
+            componentPos = pos + new Vector3(1, 3, 100 * i);
 
             Instantiate(
                 components[i].Prefab,
                 componentPos,
                 new Quaternion(),
-                group.transform
+                mainParent.transform
             );
         }
     }

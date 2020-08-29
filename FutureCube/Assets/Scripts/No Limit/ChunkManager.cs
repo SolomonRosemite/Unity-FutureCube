@@ -11,11 +11,14 @@ public class ChunkManager : MonoBehaviour
 
     private Queue<GameObject> queueOfChunks = new Queue<GameObject>();
 
+    private const string playerGameObjectTag = "PlayerPcOrPhone";
+
     void Start() => ins = this;
 
-    public void OnEnterNewChunk(GameObject go, Chunk chunk)
+    public void OnEnterNewChunk(GameObject go, Chunk chunk, Collision collision)
     {
-        return;
+        if (collision.collider.tag != playerGameObjectTag) { return; }
+
         if (PreviousId == chunk.Id) { return; }
 
         var position = go.transform.position;
@@ -26,7 +29,6 @@ public class ChunkManager : MonoBehaviour
         if (PreviousId > 2)
             return;
 
-
         queueOfChunks.Enqueue(go);
 
         CreateChunk(
@@ -34,7 +36,7 @@ public class ChunkManager : MonoBehaviour
             new Vector3(position.x, position.y - 0.03f, z)
         );
 
-        // UnloadChunk();
+        UnloadChunk();
     }
 
     private void CreateChunk(Chunk values, Vector3 position)
@@ -45,13 +47,13 @@ public class ChunkManager : MonoBehaviour
         chunkHolder.updateChunkValues(values);
     }
 
-    private void UnloadChunk(int id)
+    private void UnloadChunk()
     {
-        // TODO: Unload Chunk Obstacles
         if (queueOfChunks.Count > 2)
         {
-            Destroy(queueOfChunks.Dequeue());
-            // Destroy(GameObject.Find($"Chunk {chunk.id}"));
+            var chunkGameObject = queueOfChunks.Dequeue();
+            Destroy(GameObject.Find($"Chunk {chunkGameObject.GetComponent<ChunkHolder>().chunk.Id}"));
+            Destroy(chunkGameObject);
         }
     }
 }

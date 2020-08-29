@@ -14,5 +14,5 @@ public class ChunkHolder : MonoBehaviour
 
     public void updateChunkValues(Chunk chunk) => this.chunk = chunk;
 
-    private void OnCollisionEnter(Collision other) => ChunkManager.ins.OnEnterNewChunk(this.gameObject, chunk);
+    private void OnCollisionEnter(Collision other) => ChunkManager.ins.OnEnterNewChunk(this.gameObject, chunk, other);
 }
