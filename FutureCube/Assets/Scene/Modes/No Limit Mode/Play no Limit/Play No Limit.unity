@@ -525,6 +525,11 @@ PrefabInstance:
       propertyPath: NextSence
       value: Level05
       objectReference: {fileID: 0}
+    - target: {fileID: 4052105492944511014, guid: f558ef7402e231945a5c4ac9cd74b436,
+        type: 3}
+      propertyPath: immortal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4153436078443280349, guid: f558ef7402e231945a5c4ac9cd74b436,
         type: 3}
       propertyPath: m_MatchWidthOrHeight

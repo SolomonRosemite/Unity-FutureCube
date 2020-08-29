@@ -37,9 +37,6 @@ public class CollectCoin : MonoBehaviour
         // Create Coin Particles
         CoinParticle.Play();
 
-        // Hides Coin When CoinCollected
-        CoinMesh.enabled = false;
-
         // Calls CoinPoints Func.
         PointSystem.pointSystem.CoinCollected(CoinPoints);
 
@@ -54,7 +51,12 @@ public class CollectCoin : MonoBehaviour
 
         yield return new WaitForSeconds(1.2f);
 
+        // DestroyCoin();
+    }
+
+    private void DestroyCoin()
+    {
         // Destroys Coin
-        Destroy(this);
+        Destroy(gameObject);
     }
 }

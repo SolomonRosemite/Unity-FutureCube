@@ -170,7 +170,6 @@ public class CollectRandomBox : MonoBehaviour
     {
         switch (index)
         {
-
             case 0:
                 StartCoroutine(coin.CoinCollected(0));
                 break;

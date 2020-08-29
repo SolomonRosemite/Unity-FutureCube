@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    public static PlayerCollision ins;
+    public bool immortal = false;
 
     [HideInInspector]
     public bool backToMenu = false;
@@ -23,6 +23,10 @@ public class PlayerCollision : MonoBehaviour
             // Check if the object collided with has a tag called "Obstacle".
             if (collisionInfo.collider.tag == "Obstacle")
             {
+                if (immortal)
+                {
+                    return;
+                }
                 try
                 {
                     if (TEMP == false)
