@@ -123,7 +123,6 @@ public class CollectRandomBox : MonoBehaviour
             try { Items[index].SetActive(true); } catch { }
         }
 
-
         // Get Item Ready to use!
         ItemsReady = true;
 
@@ -148,7 +147,7 @@ public class CollectRandomBox : MonoBehaviour
         {
             ItemsReady = false;
 
-            // Prevents Error when tring to fade while ui is inactive.
+            // Prevents Error when trying to fade while ui is inactive.
             try { UIFade.CallAnimatorBool("FadeOut", true); } catch { }
         }
     }

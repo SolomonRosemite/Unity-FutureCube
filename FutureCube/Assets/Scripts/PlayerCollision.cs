@@ -58,14 +58,6 @@ public class PlayerCollision : MonoBehaviour
                 }
             }
         }
-        try
-        {
-            if (collisionInfo.collider.name == HardPlayerController.ins.StartHardPlayerController)
-            {
-                print("null");
-            }
-        }
-        catch { }
     }
 
     void OnTriggerEnter(Collider trigger)

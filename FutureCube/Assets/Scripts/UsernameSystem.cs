@@ -54,15 +54,8 @@ public class UsernameSystem : MonoBehaviour
                     Warning.text = "Username can't be to Short.";
                     Warning.color = Color.red;
                 }
-                // If Playername is inappropriate 
-                else if (Playername.text.Contains("Player") || Playername.text.Contains(@"""") || Playername.text.Contains("}") || Playername.text.Contains("{") || Playername.text.Contains("Ass") || Playername.text.Contains("fuck") || Playername.text.Contains("fick") || Playername.text.Contains("nigger"))
-                {
-                    note.text = "";
-                    Warning.text = "You can't change your Username\nto " + Playername.text + ".";
-                    Warning.color = Color.red;
-                }
                 // If Playername is already used.
-                else if (UsernameUsed() == true)
+                else if (UsernameUsed() == true || Playername.text.Contains("Player"))
                 {
                     note.text = "";
                     Warning.text = "Username is already Used.";

@@ -19,7 +19,7 @@ public class BackendDatabase : MonoBehaviour
     {
         List<string> HighScores = new List<string>();
 
-        DataQueryBuilder queryBuilder = DataQueryBuilder.Create(); // TODO: Handle if PageSize is more than 100
+        DataQueryBuilder queryBuilder = DataQueryBuilder.Create();
 
         int scoreCount = await Backendless.Data.Of("HighScores").GetObjectCountAsync();
         queryBuilder.SetPageSize(scoreCount);
