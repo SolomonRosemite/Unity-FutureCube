@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class ChunkManager : MonoBehaviour
@@ -9,12 +7,29 @@ public class ChunkManager : MonoBehaviour
     public UnityEngine.Object prefab;
     public int PreviousId { get; private set; } = -1;
 
+    [Space]
+
+    public GameObject[] Easy;
+    public GameObject[] Medium;
+    public GameObject[] Hard;
+
+
+    [Space]
+
+    public ObstacleHolder obstacleHolder;
+
     private Queue<GameObject> queueOfChunks = new Queue<GameObject>();
 
     private const string playerGameObjectTag = "PlayerPcOrPhone";
     private const float chunkDropOff = 0.03f;
 
-    void Start() => ins = this;
+
+    void Start()
+    {
+        ins = this;
+
+        obstacleHolder = new ObstacleHolder(Easy, Medium, Hard);
+    }
 
     public void OnEnterNewChunk(GameObject go, Chunk chunk, Collision collision)
     {
@@ -26,9 +41,6 @@ public class ChunkManager : MonoBehaviour
         float z = position.z + go.transform.localScale.z;
 
         PreviousId = chunk.Id;
-
-        if (PreviousId > 2)
-            return;
 
         queueOfChunks.Enqueue(go);
 

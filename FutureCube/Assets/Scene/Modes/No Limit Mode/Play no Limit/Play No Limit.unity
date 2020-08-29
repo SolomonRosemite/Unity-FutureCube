@@ -490,6 +490,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1949624596674986594, guid: c650e248dfb89f54fa72188b798af5be, type: 3}
+  Easy:
+  - {fileID: 4872051491334555166, guid: a32763cd440a0bc4297687e9e61cbfa3, type: 3}
+  - {fileID: 6618897373547941711, guid: 901e04e8d57c6ed42928bb78f0a22469, type: 3}
+  Medium:
+  - {fileID: 8537706024171471074, guid: 46831eaed1670364caebb900253689a7, type: 3}
+  - {fileID: 76256372072836822, guid: 45eec2dcaa787fb4d92ae63c5bcaa03e, type: 3}
+  Hard:
+  - {fileID: 76256372072836822, guid: 45eec2dcaa787fb4d92ae63c5bcaa03e, type: 3}
+  - {fileID: 7703200304810035809, guid: 8047b5de5388b1445be447b73a2781f8, type: 3}
 --- !u!4 &745488575
 Transform:
   m_ObjectHideFlags: 0
