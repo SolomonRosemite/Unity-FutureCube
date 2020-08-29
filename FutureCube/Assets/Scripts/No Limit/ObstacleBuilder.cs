@@ -174,7 +174,7 @@ public class ObstacleBuilder : MonoBehaviour
         Vector3 componentPos;
         for (int i = 0; i < components.Count; i++)
         {
-            componentPos = pos + new Vector3(1, 3, 100 * i);
+            componentPos = pos + new Vector3(0, 0, 100 * i);
 
             Instantiate(
                 components[i].Prefab,

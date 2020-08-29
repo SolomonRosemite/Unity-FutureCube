@@ -23,7 +23,6 @@ public class ChunkManager : MonoBehaviour
     private const string playerGameObjectTag = "PlayerPcOrPhone";
     private const float chunkDropOff = 0.03f;
 
-
     void Start()
     {
         ins = this;
@@ -43,6 +42,8 @@ public class ChunkManager : MonoBehaviour
         PreviousId = chunk.Id;
 
         queueOfChunks.Enqueue(go);
+
+
 
         CreateChunk(
             new Chunk(chunk.Id + 1, chunk.Difficulty),

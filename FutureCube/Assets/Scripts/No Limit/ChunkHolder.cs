@@ -8,7 +8,7 @@ public class ChunkHolder : MonoBehaviour
 
     void Start()
     {
-        if (chunk == null) { chunk = new Chunk(0, ChunkDifficulty.hard); }
+        if (chunk == null) { chunk = new Chunk(0, ChunkDifficulty.easy); }
         new GameObject($"Chunk {chunk.Id}");
     }
 
