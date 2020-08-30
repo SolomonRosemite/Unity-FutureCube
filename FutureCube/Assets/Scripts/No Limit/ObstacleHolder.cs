@@ -13,6 +13,13 @@ public class ObstacleHolder
         this.Hard = Hard;
     }
 
+    public ObstacleHolder(GameObject TestObstacle)
+    {
+        this.Easy = new GameObject[] { TestObstacle };
+        this.Medium = new GameObject[] { TestObstacle };
+        this.Hard = new GameObject[] { TestObstacle };
+    }
+
     public (GameObject, int) GetRandomObstacleComponent(ChunkDifficulty difficulty, System.Func<int, int, int> method)
     {
         switch (difficulty)

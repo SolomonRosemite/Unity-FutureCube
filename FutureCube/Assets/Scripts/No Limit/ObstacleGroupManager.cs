@@ -13,7 +13,7 @@ public class ObstacleGroupManager : MonoBehaviour
     void Start()
     {
         // Get Random number and assign that number to the localScale z scale of the greenZone.
-        int zScale = new System.Random().Next(20, 55);
+        int zScale = new System.Random().Next(20, 35);
 
         Vector3 greenZoneVector = greenZone.localScale;
         greenZoneVector.z = zScale;

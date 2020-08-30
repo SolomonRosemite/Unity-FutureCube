@@ -16,6 +16,9 @@ public class ChunkManager : MonoBehaviour
 
     [Space]
 
+    public GameObject testObstacle;
+    public bool enableTestObstacle;
+
     public ObstacleHolder obstacleHolder;
 
     private Queue<GameObject> queueOfChunks = new Queue<GameObject>();
@@ -27,7 +30,9 @@ public class ChunkManager : MonoBehaviour
     {
         ins = this;
 
-        obstacleHolder = new ObstacleHolder(Easy, Medium, Hard);
+        obstacleHolder = testObstacle != null && enableTestObstacle ?
+        (new ObstacleHolder(testObstacle))
+        : (new ObstacleHolder(Easy, Medium, Hard));
     }
 
     public void OnEnterNewChunk(GameObject go, Chunk chunk, Collision collision)
@@ -42,8 +47,6 @@ public class ChunkManager : MonoBehaviour
         PreviousId = chunk.Id;
 
         queueOfChunks.Enqueue(go);
-
-
 
         CreateChunk(
             new Chunk(chunk.Id + 1, chunk.Difficulty),

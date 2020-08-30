@@ -138,11 +138,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1949624596674986594}
-  obstacle: {fileID: 4872051491334555166, guid: a32763cd440a0bc4297687e9e61cbfa3,
-    type: 3}
-  move: {fileID: 76256372072836822, guid: 45eec2dcaa787fb4d92ae63c5bcaa03e, type: 3}
-  house: {fileID: 7703200304810035809, guid: 8047b5de5388b1445be447b73a2781f8, type: 3}
-  row: {fileID: 8537706024171471074, guid: 46831eaed1670364caebb900253689a7, type: 3}
 --- !u!114 &2463080530785320926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,11 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1949624596674986594}
-  obstacle: {fileID: 4872051491334555166, guid: a32763cd440a0bc4297687e9e61cbfa3,
-    type: 3}
-  move: {fileID: 76256372072836822, guid: 45eec2dcaa787fb4d92ae63c5bcaa03e, type: 3}
-  house: {fileID: 7703200304810035809, guid: 8047b5de5388b1445be447b73a2781f8, type: 3}
-  row: {fileID: 8537706024171471074, guid: 46831eaed1670364caebb900253689a7, type: 3}
 --- !u!1001 &4286162679653924459
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,13 +8,6 @@ public class ObstacleBuilder : MonoBehaviour
     public GameObject parent;
     private Chunk chunk;
 
-    [Space]
-
-    public GameObject obstacle;
-    public GameObject move;
-    public GameObject house;
-    public GameObject row;
-
     private static readonly System.Random getRandom = new System.Random();
 
     void Start() => StartCoroutine(LateStart(.5f));
@@ -49,7 +42,7 @@ public class ObstacleBuilder : MonoBehaviour
 
                     if (i == 0)
                     {
-                        components.Add(new ObstacleComponent(obstacle, difficulty));
+                        components.Add(new ObstacleComponent(GetObstacleGroupComponent(chunkDifficulty), difficulty));
                         continue;
                     }
 
@@ -83,18 +76,18 @@ public class ObstacleBuilder : MonoBehaviour
 
                     if (i == 0)
                     {
-                        components.Add(new ObstacleComponent(obstacle, difficulty));
+                        components.Add(new ObstacleComponent(GetObstacleGroupComponent(chunkDifficulty), difficulty));
                         continue;
                     }
 
                     if (components[i - 1].Difficulty == ChunkDifficulty.hard)
                     {
-                        int rng = GetRandomNumber(0, 2);
+                        int num = GetRandomNumber(0, 2);
 
                         components.Add(
                             new ObstacleComponent(
-                            GetObstacleGroupComponent(rng == 0 ? ChunkDifficulty.easy : ChunkDifficulty.medium),
-                            rng == 0 ? ChunkDifficulty.easy : ChunkDifficulty.medium
+                            GetObstacleGroupComponent(num == 0 ? ChunkDifficulty.easy : ChunkDifficulty.medium),
+                            num == 0 ? ChunkDifficulty.easy : ChunkDifficulty.medium
                         ));
 
                         continue;
@@ -121,18 +114,18 @@ public class ObstacleBuilder : MonoBehaviour
 
                     if (i == 0)
                     {
-                        components.Add(new ObstacleComponent(obstacle, difficulty));
+                        components.Add(new ObstacleComponent(GetObstacleGroupComponent(chunkDifficulty), difficulty));
                         continue;
                     }
 
                     if (components[i - 1].Difficulty == ChunkDifficulty.hard)
                     {
-                        int rng = GetRandomNumber(0, 2);
+                        int num = GetRandomNumber(0, 2);
 
                         components.Add(
                             new ObstacleComponent(
-                            GetObstacleGroupComponent(rng == 0 ? ChunkDifficulty.easy : ChunkDifficulty.medium),
-                            rng == 0 ? ChunkDifficulty.easy : ChunkDifficulty.medium
+                            GetObstacleGroupComponent(num == 0 ? ChunkDifficulty.easy : ChunkDifficulty.medium),
+                            num == 0 ? ChunkDifficulty.easy : ChunkDifficulty.medium
                         ));
 
                         continue;
@@ -195,6 +188,9 @@ public class ObstacleBuilder : MonoBehaviour
 
     private GameObject GetObstacleGroupComponent(ChunkDifficulty difficulty)
     {
-        return ChunkManager.ins.obstacleHolder.GetRandomObstacleComponent(difficulty, GetRandomNumber).Item1;
+        var values = ChunkManager.ins.obstacleHolder.GetRandomObstacleComponent(difficulty, GetRandomNumber);
+
+        // print(values.Item2);
+        return values.Item1;
     }
 }
