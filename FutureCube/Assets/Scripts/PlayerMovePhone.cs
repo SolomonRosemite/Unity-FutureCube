@@ -14,6 +14,12 @@ public class PlayerMovePhone : MonoBehaviour
     public bool backToMenu = false;
     public bool OnGround = false;
 
+    [Space]
+
+    public bool noLimitMode = false;
+    public float forwardTempo = 5000f;
+
+    [HideInInspector]
     public bool GameOver = false;
     private float ScreenWidth;
 
@@ -29,10 +35,16 @@ public class PlayerMovePhone : MonoBehaviour
     {
         ScreenWidth = Screen.width;
         playerMovement = this;
+
+        if (noLimitMode == true)
+            forwardForce = forwardTempo;
     }
 
     void FixedUpdate()
     {
+        if (noLimitMode)
+            forwardForce += .5f;
+
         if (OnGround == true)
         {
             // Add a forward force

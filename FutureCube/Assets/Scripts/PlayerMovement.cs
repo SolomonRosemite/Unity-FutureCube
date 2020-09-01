@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour
 
     public static PlayerMovement playerMovement;
 
-    // This is a reference to the Rigidbody component called "rb"
     public Rigidbody rb;
 
     public float forwardForce;  // Variable that determines the forward force
@@ -15,11 +14,20 @@ public class PlayerMovement : MonoBehaviour
     public bool backToMenu = false;
     public bool OnGround = false;
 
-    [HideInInspector] public bool GameOver = false;
+    [Space]
+
+    public bool noLimitMode = false;
+    public float forwardTempo = 5000f;
+
+    [HideInInspector]
+    public bool GameOver = false;
 
     private void Start()
     {
         playerMovement = this;
+
+        if (noLimitMode == true)
+            forwardForce = forwardTempo;
     }
 
     void OnCollisionEnter(Collision collisionInfo)
@@ -32,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (noLimitMode)
+            forwardForce += .5f;
 
         if (OnGround == true)
         {
@@ -58,7 +68,6 @@ public class PlayerMovement : MonoBehaviour
                     FindObjectOfType<GameManager>().EndGame();
                 }
             }
-
         }
     }
 

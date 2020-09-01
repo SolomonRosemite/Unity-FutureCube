@@ -2444,6 +2444,11 @@ PrefabInstance:
       propertyPath: forwardForce
       value: 8900
       objectReference: {fileID: 0}
+    - target: {fileID: 114480738963725108, guid: c86df17c13775e94f8f7b33b5bab4be2,
+        type: 3}
+      propertyPath: forwardTempo
+      value: 6500
+      objectReference: {fileID: 0}
     - target: {fileID: 3341906654762255506, guid: c86df17c13775e94f8f7b33b5bab4be2,
         type: 3}
       propertyPath: forwardForce
@@ -2458,6 +2463,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341906654762255506, guid: c86df17c13775e94f8f7b33b5bab4be2,
+        type: 3}
+      propertyPath: forwardTempo
+      value: 6500
       objectReference: {fileID: 0}
     - target: {fileID: 6258785943453516308, guid: c86df17c13775e94f8f7b33b5bab4be2,
         type: 3}
