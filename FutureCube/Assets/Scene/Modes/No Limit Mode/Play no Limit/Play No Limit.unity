@@ -134,6 +134,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6769895509383320349, guid: 3ed44f8809b13f24abfe38d5c21c1a36,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769895509383320349, guid: 3ed44f8809b13f24abfe38d5c21c1a36,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769895509383320349, guid: 3ed44f8809b13f24abfe38d5c21c1a36,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7804091379835218091, guid: 3ed44f8809b13f24abfe38d5c21c1a36,
         type: 3}
       propertyPath: m_IsActive
@@ -382,6 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1949624596674986594, guid: c650e248dfb89f54fa72188b798af5be, type: 3}
+  player: {fileID: 932307253}
   Easy:
   - {fileID: 7363143898360428789, guid: 417b3ddccce3ff14297936976dc9c2a9, type: 3}
   - {fileID: 7363143898360428789, guid: 388cc04d362af5b428629a3050fa0d8c, type: 3}
@@ -836,6 +852,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f558ef7402e231945a5c4ac9cd74b436, type: 3}
+--- !u!1 &932307253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4152328737407245312, guid: f558ef7402e231945a5c4ac9cd74b436,
+    type: 3}
+  m_PrefabInstance: {fileID: 932307252}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1945627187
 GameObject:
   m_ObjectHideFlags: 0

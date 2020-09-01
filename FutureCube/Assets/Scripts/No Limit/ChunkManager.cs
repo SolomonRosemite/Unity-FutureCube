@@ -1,11 +1,25 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ChunkManager : MonoBehaviour
 {
     public static ChunkManager ins;
+
+    // Event
+    public event EventHandler<OnNewChunkEventArgs> OnNewChunk;
+
+    public class OnNewChunkEventArgs : EventArgs
+    {
+        public int chunkId;
+    }
+
+    // GameObject
     public UnityEngine.Object prefab;
-    public int PreviousId { get; private set; } = -1;
+
+    [Space]
+
+    public GameObject player;
 
     [Space]
 
@@ -16,15 +30,18 @@ public class ChunkManager : MonoBehaviour
 
     [Space]
 
+    // Testing
     public GameObject testObstacle;
     public bool enableTestObstacle;
 
+    // Gameobject Data
+    public int PreviousId { get; private set; } = 0;
+    private float nextChunkPosition = 0;
     public ObstacleHolder obstacleHolder;
 
     private Queue<GameObject> queueOfChunks = new Queue<GameObject>();
-
-    private const string playerGameObjectTag = "PlayerPcOrPhone";
     private const float chunkDropOff = 0.03f;
+
 
     void Start()
     {
@@ -35,18 +52,24 @@ public class ChunkManager : MonoBehaviour
         : (new ObstacleHolder(Easy, Medium, Hard));
     }
 
-    public void OnEnterNewChunk(GameObject go, Chunk chunk, Collision collision)
+    void Update()
     {
-        if (collision.collider.tag != playerGameObjectTag) { return; }
+        if (player.transform.position.z > nextChunkPosition)
+            EmitNewChunkEvent();
+    }
 
-        if (PreviousId == chunk.Id) { return; }
+    private void EmitNewChunkEvent() => OnNewChunk?.Invoke(this, new OnNewChunkEventArgs { chunkId = PreviousId + 1 });
 
-        var position = go.transform.position;
-        float z = position.z + go.transform.localScale.z;
+    public void LoadNewChunk(GameObject previous, Chunk chunk)
+    {
+        nextChunkPosition += 1200;
+
+        var position = previous.transform.position;
+        float z = position.z + previous.transform.localScale.z;
 
         PreviousId = chunk.Id;
 
-        queueOfChunks.Enqueue(go);
+        queueOfChunks.Enqueue(previous);
 
         CreateChunk(
             new Chunk(chunk.Id + 1, chunk.Difficulty),
