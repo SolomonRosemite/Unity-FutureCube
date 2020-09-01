@@ -6,7 +6,7 @@ public class ChunkManager : MonoBehaviour
 {
     public static ChunkManager ins;
 
-    // Event
+    // Events
     public event EventHandler<OnNewChunkEventArgs> OnNewChunk;
 
     public class OnNewChunkEventArgs : EventArgs
@@ -14,7 +14,7 @@ public class ChunkManager : MonoBehaviour
         public int chunkId;
     }
 
-    // GameObject
+    // GameObjects
     public UnityEngine.Object prefab;
 
     [Space]
@@ -92,6 +92,7 @@ public class ChunkManager : MonoBehaviour
         if (queueOfChunks.Count > 2)
         {
             var chunkGameObject = queueOfChunks.Dequeue();
+
             Destroy(GameObject.Find($"Chunk {chunkGameObject.GetComponent<ChunkHolder>().chunk.Id}"));
             Destroy(chunkGameObject);
         }
