@@ -72,11 +72,25 @@ public class ChunkManager : MonoBehaviour
         queueOfChunks.Enqueue(previous);
 
         CreateChunk(
-            new Chunk(chunk.Id + 1, chunk.Difficulty),
+            new Chunk(chunk.Id + 1, SetDifficulty(chunk.Difficulty, chunk.Id + 1)),
             new Vector3(position.x, position.y - chunkDropOff, z)
         );
 
         UnloadChunk();
+    }
+
+    private ChunkDifficulty SetDifficulty(ChunkDifficulty chunkDifficulty, int stageId)
+    {
+        if (chunkDifficulty == ChunkDifficulty.hard)
+            return ChunkDifficulty.hard;
+
+        if (stageId == 5)
+            return chunkDifficulty == ChunkDifficulty.easy ? ChunkDifficulty.medium : ChunkDifficulty.hard;
+
+        if (stageId == 10)
+            return ChunkDifficulty.hard;
+
+        return chunkDifficulty;
     }
 
     private void CreateChunk(Chunk values, Vector3 position)
