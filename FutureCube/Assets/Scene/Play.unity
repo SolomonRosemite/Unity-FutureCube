@@ -1358,6 +1358,7 @@ MonoBehaviour:
   PlayerColor: {r: 0, g: 0, b: 0, a: 0}
   SkinCountLJF: 3
   UpdateAvailable: 0
+  Difficulty: 2
 --- !u!114 &1776717512
 MonoBehaviour:
   m_ObjectHideFlags: 0

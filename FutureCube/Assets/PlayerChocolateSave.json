@@ -1,8 +1,8 @@
 {
     "LevelComplete": 10,
     "Volume": 0.0,
-    "SFXOnOff": false,
-    "MusicOnOff": false,
+    "SFXOnOff": true,
+    "MusicOnOff": true,
     "PlayerName": "niklasishot",
     "SetQuality": 3.0,
     "V_Coins": 17122,

@@ -76,6 +76,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -87,6 +88,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -132,6 +134,9 @@ MonoBehaviour:
   sidewaysForce: 120
   backToMenu: 0
   OnGround: 0
+  noLimitMode: 0
+  forwardTempo: 5000
+  GameOver: 0
 --- !u!114 &3341906654762255506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +154,9 @@ MonoBehaviour:
   sidewaysForce: 9000
   backToMenu: 0
   OnGround: 0
+  noLimitMode: 0
+  forwardTempo: 5000
+  GameOver: 0
 --- !u!114 &114842211378620554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c304befbc79145a45aebab886a1ee716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  immortal: 0
   backToMenu: 0
   TEMP: 0
 --- !u!114 &6258785943453516308
@@ -215,10 +224,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4559805872128070}
     m_Modifications:
-    - target: {fileID: 477462122298907607, guid: c6917d2b9899eb94798068ec398824ee,
+    - target: {fileID: 477462122298907605, guid: c6917d2b9899eb94798068ec398824ee,
         type: 3}
-      propertyPath: m_Name
-      value: Bubble
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 477462122298907606, guid: c6917d2b9899eb94798068ec398824ee,
         type: 3}
@@ -275,10 +284,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 477462122298907605, guid: c6917d2b9899eb94798068ec398824ee,
+    - target: {fileID: 477462122298907607, guid: c6917d2b9899eb94798068ec398824ee,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: m_Name
+      value: Bubble
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6917d2b9899eb94798068ec398824ee, type: 3}

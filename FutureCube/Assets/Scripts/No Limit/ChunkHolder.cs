@@ -1,7 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class ChunkHolder : MonoBehaviour
 {
@@ -12,7 +10,7 @@ public class ChunkHolder : MonoBehaviour
 
     void Start()
     {
-        if (chunk == null) { chunk = new Chunk(0, ChunkDifficulty.easy); }
+        if (chunk == null) { chunk = new Chunk(0, LoadJson.loadJson.Difficulty); }
         new GameObject($"Chunk {chunk.Id}");
 
         StartCoroutine(LateStart(.5f));

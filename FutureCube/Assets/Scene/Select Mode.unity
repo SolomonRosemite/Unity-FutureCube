@@ -944,7 +944,7 @@ GameObject:
   - component: {fileID: 321143342}
   - component: {fileID: 321143341}
   m_Layer: 31
-  m_Name: 1 V 1 Vid
+  m_Name: No Limit Mode1 Vid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1304,7 +1304,7 @@ GameObject:
   - component: {fileID: 406691581}
   - component: {fileID: 406691580}
   m_Layer: 5
-  m_Name: 1 V 1
+  m_Name: No Limit Mode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1729,9 +1729,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Player
+  m_Text: 'No Limit
 
-    1 V 1'
+    <color=#eb2f1a>Mode</color>'
 --- !u!222 &489590214
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3292,7 +3292,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: No Limit Mode
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 1
       - m_Target: {fileID: 5084472408541305378}
         m_MethodName: Show
         m_Mode: 1
@@ -3303,7 +3303,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
 --- !u!114 &1337302911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4325,7 +4325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1878095980
 RectTransform:
   m_ObjectHideFlags: 0

@@ -41,6 +41,8 @@ public class LoadJson : MonoBehaviour
     [HideInInspector] public const float Version = 1.6f;
     [HideInInspector] public bool UpdateAvailable;
 
+    public ChunkDifficulty Difficulty = ChunkDifficulty.medium;
+
     void Start()
     {
         loadJson = this;

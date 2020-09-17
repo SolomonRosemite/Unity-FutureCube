@@ -161,7 +161,6 @@ public class CollectRandomBox : MonoBehaviour
 
             UIFade.CallAnimatorBool("FadeOut", true);
             ItemsReady = false;
-
         }
     }
 

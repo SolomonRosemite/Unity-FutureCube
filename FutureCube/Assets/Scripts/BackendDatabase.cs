@@ -39,7 +39,7 @@ public class BackendDatabase : MonoBehaviour
 
         scores["score"] = score;
 
-        if (await UserExists(username))
+        if ((await UserExists(username)).Item2)
         {
             Backendless.Data.Of("HighScores").Update($"username = '{username}'", scores);
         }
@@ -50,23 +50,57 @@ public class BackendDatabase : MonoBehaviour
         }
     }
 
-    public async Task<bool> UserExists(string username)
+    public async void WriteScoreNoLimitMode(string username, NoLimitScore score)
+    {
+        Dictionary<string, object> scores = new Dictionary<string, object>();
+        string table = "NoLimitScores";
+
+        string scoreKey;
+
+        if (score.HardScore != -2)
+        {
+            scores["HardScore"] = score.HardScore;
+            scoreKey = "HardScore";
+        }
+        else
+        {
+            scores["NormalScore"] = score.NormalScore;
+            scoreKey = "NormalScore";
+        }
+
+        var x = await UserExists(username, table);
+
+        int currentScore = System.Convert.ToInt32(x.Item1[scoreKey]);
+
+        if (x.Item2)
+        {
+            if ((int)scores[scoreKey] > currentScore)
+                await Backendless.Data.Of(table).UpdateAsync($"username = '{username}'", scores);
+        }
+        else
+        {
+            scores["username"] = username;
+            await Backendless.Data.Of(table).SaveAsync(scores);
+        }
+    }
+
+    public async Task<(Dictionary<string, object>, bool)> UserExists(string username, string table = "HighScores")
     {
         DataQueryBuilder queryBuilder = DataQueryBuilder.Create();
 
-        int scoreCount = await Backendless.Data.Of("HighScores").GetObjectCountAsync();
-        queryBuilder.SetPageSize(scoreCount);
+        int count = await Backendless.Data.Of(table).GetObjectCountAsync();
+        queryBuilder.SetPageSize(count == 0 ? 1 : count);
 
-        var scores = await Backendless.Data.Of("HighScores").FindAsync(queryBuilder);
+        var scores = await Backendless.Data.Of(table).FindAsync(queryBuilder);
 
         foreach (var item in scores)
         {
             if (username == item["username"].ToString())
             {
-                return true;
+                return (item, true);
             }
         }
-        return false;
+        return (null, false);
     }
 
     public void WriteFeedback(string username, string context)
@@ -86,5 +120,17 @@ public class BackendDatabase : MonoBehaviour
         float version = (float)temp;
 
         return version;
+    }
+
+    public class NoLimitScore
+    {
+        public readonly int NormalScore;
+        public readonly int HardScore;
+
+        public NoLimitScore(int NormalScore, int HardScore)
+        {
+            this.NormalScore = NormalScore;
+            this.HardScore = HardScore;
+        }
     }
 }

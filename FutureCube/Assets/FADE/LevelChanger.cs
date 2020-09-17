@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class LevelChanger : MonoBehaviour
 {
-
     public Animator animator;
 
     private bool Clicked = false;
@@ -30,15 +29,10 @@ public class LevelChanger : MonoBehaviour
         Clicked = true;
     }
 
-    public void FadeToNextLevel()
-    {
-        FadeToLevel(levelIndex: NextScene);
-    }
+    public void FadeToNextLevel() => FadeToLevel(levelIndex: NextScene);
 
     public void FadeToLevel(string levelIndex)
     {
-        // Todo: Remove This value after Debuging is done
-        levelIndex = ("Play No Limit");
         levelToLoad = levelIndex;
         animator.SetTrigger("FadeOut");
     }
@@ -48,15 +42,11 @@ public class LevelChanger : MonoBehaviour
         if (levelToLoad == "Reload")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            return;
         }
-        else
-        {
-            SceneManager.LoadScene(levelToLoad);
-        }
+
+        SceneManager.LoadScene(levelToLoad);
     }
 
-    public void Test()
-    {
-        print("Test");
-    }
+    public void UpdateChunkDifficulty(int difficulty) => LoadJson.loadJson.Difficulty = (ChunkDifficulty)difficulty;
 }

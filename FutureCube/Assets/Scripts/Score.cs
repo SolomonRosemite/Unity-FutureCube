@@ -3,9 +3,15 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
+    public static Score score;
     public Transform player;
     public Text scoreText;
-    private float pos;
+    public float pos;
+
+    void Start()
+    {
+        score = this;
+    }
 
     void Update()
     {
