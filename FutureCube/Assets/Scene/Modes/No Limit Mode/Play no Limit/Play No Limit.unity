@@ -459,6 +459,11 @@ PrefabInstance:
       propertyPath: forwardTempo
       value: 17000
       objectReference: {fileID: 0}
+    - target: {fileID: 4052105492944511014, guid: f558ef7402e231945a5c4ac9cd74b436,
+        type: 3}
+      propertyPath: noLimitMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4153436078443280349, guid: f558ef7402e231945a5c4ac9cd74b436,
         type: 3}
       propertyPath: m_MatchWidthOrHeight
@@ -875,6 +880,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 932307252}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &932307255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932307253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ae9c63d59c5184b8b0a87bd0938e67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1529781944
 GameObject:
   m_ObjectHideFlags: 0

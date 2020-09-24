@@ -1,10 +1,14 @@
 using System.Collections;
 using EZCameraShake;
 using UnityEngine;
+using System;
 
 public class PlayerCollision : MonoBehaviour
 {
     public bool immortal = false;
+    public bool noLimitMode = false;
+
+    private bool timeout = false;
 
     [HideInInspector]
     public bool backToMenu = false;
@@ -15,10 +19,18 @@ public class PlayerCollision : MonoBehaviour
     [HideInInspector]
     public bool TEMP;
 
+    // Events
+    public event EventHandler<OnHitObstacleEventArgs> onHitObstacle;
+    public class OnHitObstacleEventArgs : EventArgs
+    {
+        public int heartsRemaining;
+    }
+
+    private int heartsRemaining = 3;
+
     void OnCollisionEnter(Collision collisionInfo)
     {
-        // Obstacle
-        if (backToMenu is false)
+        if (backToMenu == false)
         {
             // Check if the object collided with has a tag called "Obstacle".
             if (collisionInfo.collider.tag == "Obstacle")
@@ -29,15 +41,8 @@ public class PlayerCollision : MonoBehaviour
                 }
                 try
                 {
-                    if (TEMP == false)
-                    {
-                        try { PlayerMovement.playerMovement.enabled = false; }
-                        catch { PlayerMovePhone.playerMovement.enabled = false; }
-                        FindObjectOfType<GameManager>().EndGame();
-                        CameraShaker.Instance.ShakeOnce(4f, 4f, 1f, 1f);
-                    }
-                    // TEMP is our bubble
-                    if (TEMP == true)
+                    if (TEMP == false) { EndGame(); }
+                    else
                     {
                         BubbleShow = GameObject.FindGameObjectWithTag("BubbleTag");
 
@@ -49,16 +54,39 @@ public class PlayerCollision : MonoBehaviour
                         BubbleRender.enabled = false;
                     }
                 }
-                catch
-                {
-                    try { PlayerMovement.playerMovement.enabled = false; }
-                    catch { PlayerMovePhone.playerMovement.enabled = false; }
-                    //PlayerColorChanger.ins.Hit = true;
-                    FindObjectOfType<GameManager>().EndGame();
-                }
+                catch { EndGame(); }
             }
         }
     }
+
+    void EndGame()
+    {
+        if (noLimitMode == true && heartsRemaining != 0)
+        {
+            if (timeout == false)
+            {
+                timeout = true;
+                heartsRemaining--;
+
+                EmitNewChunkEvent();
+                StartCoroutine(SetTimeOut(.5f));
+            }
+            return;
+        }
+
+        try { PlayerMovement.playerMovement.enabled = false; }
+        catch { PlayerMovePhone.playerMovement.enabled = false; }
+        FindObjectOfType<GameManager>().EndGame();
+        CameraShaker.Instance.ShakeOnce(4f, 4f, 1f, 1f);
+    }
+
+    IEnumerator SetTimeOut(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        timeout = false;
+    }
+
+    private void EmitNewChunkEvent() => onHitObstacle?.Invoke(this, new OnHitObstacleEventArgs { heartsRemaining = heartsRemaining });
 
     void OnTriggerEnter(Collider trigger)
     {
