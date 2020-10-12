@@ -1,59 +1,68 @@
 ﻿using System.Collections.Generic;
-using BackendlessAPI.Persistence;
 using System.Threading.Tasks;
-using BackendlessAPI;
 using UnityEngine;
+
+using Firebase.Firestore;
 
 public class BackendDatabase : MonoBehaviour
 {
     public static BackendDatabase backend;
+    private FirebaseFirestore db;
+
     void Start()
     {
+        db = FirebaseFirestore.DefaultInstance;
         backend = this;
-
-        // logging in to backend
-        Backendless.InitApp(GenerateCredentials.applicationId, GenerateCredentials.apiKey);
     }
 
     public async Task<List<string>> ReadScore()
     {
         List<string> HighScores = new List<string>();
 
-        DataQueryBuilder queryBuilder = DataQueryBuilder.Create();
+        CollectionReference reference;
+        reference = db.Collection("HighScores");
+        var scores = await (reference.GetSnapshotAsync());
 
-        int scoreCount = await Backendless.Data.Of("HighScores").GetObjectCountAsync();
-        queryBuilder.SetPageSize(scoreCount);
-
-        var scores = await Backendless.Data.Of("HighScores").FindAsync(queryBuilder);
         foreach (var item in scores)
         {
-            HighScores.Add(item["score"].ToString());
+            HighScores.Add(item.ToDictionary()["score"].ToString());
         }
 
         return HighScores;
     }
 
-    public async void WriteScore(string username, string score)
+    public async void WriteScore(string username, string jsonScore)
     {
+        string table = "HighScores";
+
         Dictionary<string, dynamic> scores = new Dictionary<string, dynamic>();
+        scores["score"] = jsonScore;
+        scores["username"] = username;
 
-        scores["score"] = score;
+        DocumentReference reference;
+        reference = db.Collection(table).Document(username);
 
-        if ((await UserExists(username)).Item2)
-        {
-            Backendless.Data.Of("HighScores").Update($"username = '{username}'", scores);
-        }
-        else
-        {
-            scores["username"] = username;
-            Backendless.Data.Of("HighScores").Save(scores);
-        }
+        await reference.SetAsync(scores, SetOptions.MergeAll);
+    }
+
+    public async Task<(Dictionary<string, object>, bool)> GetPlayerNoLimitModeScore(string username)
+    {
+        DocumentReference reference;
+        reference = db.Collection("NoLimitScores").Document(username);
+
+        var doc = await reference.GetSnapshotAsync();
+        return (doc.ToDictionary(), doc.Exists);
     }
 
     public async void WriteScoreNoLimitMode(string username, NoLimitScore score)
     {
         Dictionary<string, object> scores = new Dictionary<string, object>();
+        scores["username"] = username;
+
         string table = "NoLimitScores";
+
+        DocumentReference reference;
+        reference = db.Collection(table).Document(username);
 
         string scoreKey;
 
@@ -68,36 +77,40 @@ public class BackendDatabase : MonoBehaviour
             scoreKey = "NormalScore";
         }
 
-        var x = await UserExists(username, table);
+        var value = await GetPlayerNoLimitModeScore(username);
 
-        int currentScore = System.Convert.ToInt32(x.Item1[scoreKey]);
+        if (value.Item2 == false)
+        {
+            if (scoreKey == "NormalScore")
+            {
+                scores["HardScore"] = -2;
+                await reference.SetAsync(scores, SetOptions.MergeAll);
+                return;
+            }
 
-        if (x.Item2)
-        {
-            if ((int)scores[scoreKey] > currentScore)
-                await Backendless.Data.Of(table).UpdateAsync($"username = '{username}'", scores);
+            scores["NormalScore"] = -2;
+            await reference.SetAsync(scores, SetOptions.MergeAll);
+            return;
         }
-        else
-        {
-            scores["username"] = username;
-            await Backendless.Data.Of(table).SaveAsync(scores);
-        }
+
+        int currentScore = System.Convert.ToInt32(value.Item1[scoreKey]);
+
+        scores[scoreKey] = Mathf.Max((int)scores[scoreKey], currentScore);
+
+        await reference.SetAsync(scores, SetOptions.MergeAll);
     }
 
     public async Task<(Dictionary<string, object>, bool)> UserExists(string username, string table = "HighScores")
     {
-        DataQueryBuilder queryBuilder = DataQueryBuilder.Create();
-
-        int count = await Backendless.Data.Of(table).GetObjectCountAsync();
-        queryBuilder.SetPageSize(count == 0 ? 1 : count);
-
-        var scores = await Backendless.Data.Of(table).FindAsync(queryBuilder);
+        CollectionReference reference;
+        reference = db.Collection("HighScores");
+        var scores = await (reference.GetSnapshotAsync());
 
         foreach (var item in scores)
         {
-            if (username == item["username"].ToString())
+            if (username == item.ToDictionary()["username"].ToString())
             {
-                return (item, true);
+                return (item.ToDictionary(), true);
             }
         }
         return (null, false);
@@ -108,18 +121,18 @@ public class BackendDatabase : MonoBehaviour
         Dictionary<string, dynamic> user = new Dictionary<string, dynamic>();
 
         user["username"] = username;
-        user["feedbackContext"] = context;
+        user["message"] = context;
 
-        Backendless.Data.Of("Feedback").SaveAsync(user);
+        db.Collection("Feedbacks").Document(username).SetAsync(user);
     }
 
-    public async Task<float> GetGameVersion()
+    public async Task<double> GetGameVersion()
     {
-        var tempversion = (await Backendless.Data.Of("GameVersion").FindAsync())[0];
-        double temp = (double)tempversion["version"];
-        float version = (float)temp;
+        DocumentReference reference;
+        reference = db.Collection("General").Document("Version");
+        object version = (await reference.GetSnapshotAsync()).ToDictionary()["version"];
 
-        return version;
+        return (double)version;
     }
 
     public class NoLimitScore

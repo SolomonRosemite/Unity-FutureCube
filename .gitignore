@@ -1,5 +1,4 @@
 ###
-GenerateCredentials.cs
 # Unity folders and files
 ###
 [Aa]ssets/AssetStoreTools*
@@ -41,3 +40,5 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 Thumbs.db
+FutureCube/Assets/google-services.json
+FutureCube/Assets/StreamingAssets/google-services-desktop.json

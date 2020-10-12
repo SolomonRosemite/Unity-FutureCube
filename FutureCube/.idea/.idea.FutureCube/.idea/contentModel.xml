@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Jesse\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Jesse\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_FutureCube.-861912552.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Jesse\Documents\Unity\FutureCube\Unity-FutureCube\FutureCube" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Assets" t="Include">
+          <e p="blur" t="Include">
+            <e p="Shaders" t="Include">
+              <e p="WaterBlurFinal.shader" t="Include" />
+              <e p="WaterBlurModified.shader" t="Include" />
+            </e>
+          </e>
+          <e p="EZ Camera Shake" t="Include">
+            <e p="Demo" t="Include">
+              <e p="Sample Scripts" t="Include">
+                <e p="ShakeByDistance.cs" t="Include" />
+                <e p="ShakeOnKeyPress.cs" t="Include" />
+                <e p="ShakeOnTrigger.cs" t="Include" />
+              </e>
+              <e p="ShakeDemo.cs" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="CameraShakeInstance.cs" t="Include" />
+              <e p="CameraShakePresets.cs" t="Include" />
+              <e p="CameraShaker.cs" t="Include" />
+              <e p="Utilities" t="Include">
+                <e p="CameraUtilities.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Game Jam Template" t="Include">
+            <e p="Fonts" t="Include">
+              <e p="OpenSans" t="Include">
+                <e p="License!.txt" t="Include" />
+              </e>
+            </e>
+            <e p="GameJamTemplateReadMe.txt" t="Include" />
+            <e p="README.txt" t="Include" />
+            <e p="Scripts" t="Include">
+              <e p="FlexibleUI" t="Include">
+                <e p="FlexibleUI.cs" t="Include" />
+                <e p="FlexibleUIButton.cs" t="Include" />
+                <e p="FlexibleUIData.cs" t="Include" />
+                <e p="FlexibleUIImage.cs" t="Include" />
+                <e p="FlexibleUISlider.cs" t="Include" />
+                <e p="FlexibleUIText.cs" t="Include" />
+              </e>
+              <e p="Menu" t="Include">
+                <e p="AutoQuitApplication.cs" t="Include" />
+                <e p="DontDestroy.cs" t="Include" />
+                <e p="EventSystemChecker.cs" t="Include" />
+                <e p="MenuObject.cs" t="Include" />
+                <e p="MenuSettings.cs" t="Include" />
+                <e p="Pause.cs" t="Include" />
+                <e p="PlayMusic.cs" t="Include" />
+                <e p="QuitApplication.cs" t="Include" />
+                <e p="SetAudioLevels.cs" t="Include" />
+                <e p="ShowPanels.cs" t="Include" />
+                <e p="ShowPanelsStartMenu.cs" t="Include" />
+                <e p="StartOptions.cs" t="Include" />
+                <e p="StopMusic.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Highscore" t="Include">
+            <e p="HighscoreTable" t="Include">
+              <e p="HighscoreTable.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="FADE" t="Include">
+          <e p="BackToMenu.cs" t="Include" />
+          <e p="LevelChanger.cs" t="Include" />
+          <e p="trash" t="Include">
+            <e p="LevelChangerFadeOut.cs" t="Include" />
+            <e p="LevelChangerLast.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Packages" t="Include">
+          <e p="Backendless.NET.5.3.0" t="Include">
+            <e p="LICENSE.txt" t="Include" />
+            <e p="README.txt" t="Include" />
+          </e>
+          <e p="Newtonsoft.Json.9.0.1" t="Include">
+            <e p="lib" t="Include">
+              <e p="net45" t="Include">
+                <e p="Newtonsoft.Json.xml" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="System.Collections.Immutable.1.4.0" t="Include">
+            <e p="lib" t="Include">
+              <e p="netstandard2.0" t="Include">
+                <e p="System.Collections.Immutable.xml" t="Include" />
+              </e>
+            </e>
+            <e p="useSharedDesignerContext.txt" t="Include" />
+            <e p="version.txt" t="Include" />
+          </e>
+          <e p="System.Collections.Specialized.4.3.0" t="Include">
+            <e p="dotnet_library_license.txt" t="Include" />
+            <e p="ThirdPartyNotices.txt" t="Include" />
+          </e>
+          <e p="System.Linq.4.3.0" t="Include">
+            <e p="dotnet_library_license.txt" t="Include" />
+            <e p="ThirdPartyNotices.txt" t="Include" />
+          </e>
+          <e p="System.Net.NameResolution.4.3.0" t="Include">
+            <e p="dotnet_library_license.txt" t="Include" />
+            <e p="ThirdPartyNotices.txt" t="Include" />
+          </e>
+          <e p="System.Net.Security.4.3.0" t="Include">
+            <e p="dotnet_library_license.txt" t="Include" />
+            <e p="ThirdPartyNotices.txt" t="Include" />
+          </e>
+          <e p="System.Net.Sockets.4.3.0" t="Include">
+            <e p="dotnet_library_license.txt" t="Include" />
+            <e p="ThirdPartyNotices.txt" t="Include" />
+          </e>
+          <e p="System.Runtime.4.3.0" t="Include">
+            <e p="dotnet_library_license.txt" t="Include" />
+            <e p="ThirdPartyNotices.txt" t="Include" />
+          </e>
+          <e p="System.Runtime.Extensions.4.3.0" t="Include">
+            <e p="dotnet_library_license.txt" t="Include" />
+            <e p="ThirdPartyNotices.txt" t="Include" />
+          </e>
+          <e p="System.Runtime.InteropServices.4.3.0" t="Include">
+            <e p="dotnet_library_license.txt" t="Include" />
+            <e p="ThirdPartyNotices.txt" t="Include" />
+          </e>
+          <e p="System.Security.Cryptography.Algorithms.4.3.0" t="Include">
+            <e p="dotnet_library_license.txt" t="Include" />
+            <e p="ThirdPartyNotices.txt" t="Include" />
+          </e>
+          <e p="System.Security.Cryptography.Encoding.4.3.0" t="Include">
+            <e p="dotnet_library_license.txt" t="Include" />
+            <e p="ThirdPartyNotices.txt" t="Include" />
+          </e>
+          <e p="System.Security.Cryptography.Primitives.4.3.0" t="Include">
+            <e p="dotnet_library_license.txt" t="Include" />
+            <e p="ThirdPartyNotices.txt" t="Include" />
+          </e>
+          <e p="System.Security.Cryptography.X509Certificates.4.3.0" t="Include">
+            <e p="dotnet_library_license.txt" t="Include" />
+            <e p="ThirdPartyNotices.txt" t="Include" />
+          </e>
+          <e p="System.Text.RegularExpressions.4.3.0" t="Include">
+            <e p="dotnet_library_license.txt" t="Include" />
+            <e p="ThirdPartyNotices.txt" t="Include" />
+          </e>
+          <e p="System.Threading.4.3.0" t="Include">
+            <e p="dotnet_library_license.txt" t="Include" />
+            <e p="ThirdPartyNotices.txt" t="Include" />
+          </e>
+          <e p="System.Threading.Timer.4.3.0" t="Include">
+            <e p="dotnet_library_license.txt" t="Include" />
+            <e p="ThirdPartyNotices.txt" t="Include" />
+          </e>
+        </e>
+        <e p="PreMade" t="Include">
+          <e p="Shader" t="Include">
+            <e p="BlurV3.shader" t="Include" />
+          </e>
+        </e>
+        <e p="Scene" t="Include">
+          <e p="Modes" t="Include">
+            <e p="Adventure Mode" t="Include">
+              <e p="LevelChangerAdventureMode.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Achievements.cs" t="Include" />
+          <e p="ActivateFPS.cs" t="Include" />
+          <e p="BackendDatabase.cs" t="Include" />
+          <e p="BlurControl.cs" t="Include" />
+          <e p="ButtonManager.cs" t="Include" />
+          <e p="By Rosemite" t="Include">
+            <e p="Countdown.cs" t="Include" />
+            <e p="FindAndKill.cs" t="Include" />
+            <e p="LevelPercentageText.cs" t="Include" />
+            <e p="MusicTransition.cs" t="Include" />
+          </e>
+          <e p="ChangeCamColor.cs" t="Include" />
+          <e p="CollectBadMushroom.cs" t="Include" />
+          <e p="CollectBubble.cs" t="Include" />
+          <e p="CollectClock.cs" t="Include" />
+          <e p="CollectCoin.cs" t="Include" />
+          <e p="CollectRandomBox.cs" t="Include" />
+          <e p="EndTrigger.cs" t="Include" />
+          <e p="Fade.cs" t="Include" />
+          <e p="FadeText.cs" t="Include" />
+          <e p="FindMusic.cs" t="Include" />
+          <e p="FollowPlayer.cs" t="Include" />
+          <e p="FontColorChanger.cs" t="Include" />
+          <e p="FontColorChangerV2.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
+          <e p="GameVersion.cs" t="Include" />
+          <e p="GenerateCredentials.cs" t="Include" />
+          <e p="GetProgressbarAdventureMode.cs" t="Include" />
+          <e p="GoBackOnce.cs" t="Include" />
+          <e p="HardPlayerController.cs" t="Include" />
+          <e p="Leaderboard.cs" t="Include" />
+          <e p="LevelComplete.cs" t="Include" />
+          <e p="LevelJson.cs" t="Include" />
+          <e p="LoadJson.cs" t="Include" />
+          <e p="Mission.cs" t="Include" />
+          <e p="MissionRewardAni.cs" t="Include" />
+          <e p="MovingObstacle.cs" t="Include" />
+          <e p="MuteUnmute.cs" t="Include" />
+          <e p="No Limit" t="Include">
+            <e p="Chunk.cs" t="Include" />
+            <e p="ChunkHolder.cs" t="Include" />
+            <e p="ChunkManager.cs" t="Include" />
+            <e p="ObstacleBuilder.cs" t="Include" />
+            <e p="ObstacleComponent.cs" t="Include" />
+            <e p="ObstacleGroupManager.cs" t="Include" />
+            <e p="ObstacleHolder.cs" t="Include" />
+            <e p="PlayerHearts.cs" t="Include" />
+            <e p="PlayerSpeed.cs" t="Include" />
+          </e>
+          <e p="PauseV2.cs" t="Include" />
+          <e p="PcOrPhoneDetect.cs" t="Include" />
+          <e p="PlayerCollision.cs" t="Include" />
+          <e p="PlayerColorChanger.cs" t="Include" />
+          <e p="PlayerMovement.cs" t="Include" />
+          <e p="PlayerMovePhone.cs" t="Include" />
+          <e p="PlayerName.cs" t="Include" />
+          <e p="PlayerTurn.cs" t="Include" />
+          <e p="PointSystem.cs" t="Include" />
+          <e p="Ramp.cs" t="Include" />
+          <e p="RandomTipText.cs" t="Include" />
+          <e p="Score.cs" t="Include" />
+          <e p="SelectRandom.cs" t="Include" />
+          <e p="SelectRandomV2.cs" t="Include" />
+          <e p="SelfSystemApi.cs" t="Include" />
+          <e p="SetAspectRatio.cs" t="Include" />
+          <e p="SetCursor.cs" t="Include" />
+          <e p="SetLeaderboardString.cs" t="Include" />
+          <e p="SetLeaderboardUI.cs" t="Include" />
+          <e p="SetPlayerSkin.cs" t="Include" />
+          <e p="SetQualitySettings.cs" t="Include" />
+          <e p="SetText.cs" t="Include" />
+          <e p="SetTimer.cs" t="Include" />
+          <e p="SetUI.cs" t="Include" />
+          <e p="ShowFPS.cs" t="Include" />
+          <e p="ShowGameObject.cs" t="Include" />
+          <e p="ShowScore.cs" t="Include" />
+          <e p="ShowSelf.cs" t="Include" />
+          <e p="ShowVCoinLive.cs" t="Include" />
+          <e p="SkinSystem.cs" t="Include" />
+          <e p="SkinSystemForButtons.cs" t="Include" />
+          <e p="SliderForClock.cs" t="Include" />
+          <e p="SliderVolume.cs" t="Include" />
+          <e p="SmallFunctions.cs" t="Include" />
+          <e p="SmallFunctionsV2.cs" t="Include" />
+          <e p="SmallFunctionsV3.cs" t="Include" />
+          <e p="starters.cs" t="Include" />
+          <e p="StoreV2ItemManager.cs" t="Include" />
+          <e p="StoreV2ItemManagerSet.cs" t="Include" />
+          <e p="StoreV2MainSkinSystem.cs" t="Include" />
+          <e p="TapOrSpace.cs" t="Include" />
+          <e p="Test.cs" t="Include" />
+          <e p="Tester.cs" t="Include" />
+          <e p="TimerFadeExit.cs" t="Include" />
+          <e p="TopDownCamera.cs" t="Include" />
+          <e p="TopDownCameraEnd.cs" t="Include" />
+          <e p="TriesCounter.cs" t="Include" />
+          <e p="TriggerWall.cs" t="Include" />
+          <e p="TurnOffSliderForPhone.cs" t="Include" />
+          <e p="UsernameSystem.cs" t="Include" />
+        </e>
+      </e>
+      <e p="FutureCube.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

@@ -1,0 +1,20 @@
+{
+    "LevelComplete": 10,
+    "Volume": 0.0,
+    "SFXOnOff": true,
+    "MusicOnOff": true,
+    "PlayerName": "niklasishot",
+    "SetQuality": 3.0,
+    "V_Coins": 17122,
+    "PlayerColor": {
+        "r": 0.6549019813537598,
+        "g": 0.36078429222106936,
+        "b": 0.9411764740943909,
+        "a": 0.0
+    },
+    "CurrentSkin": [
+        1,
+        1,
+        2
+    ]
+}

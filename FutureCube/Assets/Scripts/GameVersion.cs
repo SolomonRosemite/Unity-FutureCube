@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameVersion : MonoBehaviour
 {
-    private float Version;
+    private double Version;
     private bool UpdateAvailable;
 
     private float nextActionTime;
