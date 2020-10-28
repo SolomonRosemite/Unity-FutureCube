@@ -200,7 +200,6 @@
           <e p="FontColorChangerV2.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="GameVersion.cs" t="Include" />
-          <e p="GenerateCredentials.cs" t="Include" />
           <e p="GetProgressbarAdventureMode.cs" t="Include" />
           <e p="GoBackOnce.cs" t="Include" />
           <e p="HardPlayerController.cs" t="Include" />

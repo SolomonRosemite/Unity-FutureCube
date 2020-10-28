@@ -20,11 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54f01eca-aeb9-4484-bf1c-f95b5bf42319" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BackendDatabase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BackendDatabase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FutureCube/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FutureCube/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/By Rosemite/FindAndKill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/By Rosemite/FindAndKill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/No Limit/PlayerHearts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/No Limit/PlayerHearts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SmallFunctions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SmallFunctions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Test.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1602538758657</updated>
       <workItem from="1602538778826" duration="227000" />
+      <workItem from="1602710724698" duration="122000" />
     </task>
     <servers />
   </component>
@@ -100,8 +101,15 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="301" key="FileChooserDialogImpl" timestamp="1602710844348">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="740" y="301" key="FileChooserDialogImpl/0.40.1920.1040@0.40.1920.1040" timestamp="1602710844348" />
   </component>
 </project>

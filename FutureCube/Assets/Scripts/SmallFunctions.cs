@@ -27,7 +27,7 @@ public class SmallFunctions : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
 
-        FindAndKill.ins.EndOfSence();
+        FindAndKill.ins.EndOfScene();
         FindMusic.ins.Trigger();
     }
 

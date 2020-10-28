@@ -9,18 +9,18 @@ public class Test : MonoBehaviour
 
     void Start()
     {
-        Chnage(bypassed);
+        Change(bypassed);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            Chnage(bypassed);
+            Change(bypassed);
         }
     }
 
-    void Chnage(bool byPass)
+    void Change(bool byPass)
     {
         if (byPass == true)
         {

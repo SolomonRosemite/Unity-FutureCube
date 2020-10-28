@@ -12,7 +12,7 @@ public class PlayerHearts : MonoBehaviour
         playerCollision.onHitObstacle += OnHitObstacle;
     }
 
-    private void OnHitObstacle(object x, PlayerCollision.OnHitObstacleEventArgs args)
+    private void OnHitObstacle(object _, PlayerCollision.OnHitObstacleEventArgs args)
     {
         // Todo: Show Remaining Hearts in Player UI.
         print($"Remaining Hearts: {args.heartsRemaining}");

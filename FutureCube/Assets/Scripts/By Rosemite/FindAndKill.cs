@@ -22,7 +22,7 @@ public class FindAndKill : MonoBehaviour
         }
     }
 
-    public void EndOfSence()
+    public void EndOfScene()
     {
         Go = true;
     }
