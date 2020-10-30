@@ -1,11 +1,11 @@
 {
-    "LevelComplete": 0,
+    "LevelComplete": 10,
     "Volume": -20.0,
     "SFXOnOff": false,
     "MusicOnOff": false,
-    "PlayerName": "Hey Jessie",
-    "SetQuality": 3.0,
-    "V_Coins": 500,
+    "PlayerName": "Player",
+    "SetQuality": 5.0,
+    "V_Coins": 4772,
     "PlayerColor": {
         "r": 1.0,
         "g": 0.10980390012264252,

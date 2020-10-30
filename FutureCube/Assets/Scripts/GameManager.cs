@@ -1,3 +1,4 @@
+using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
@@ -95,7 +96,14 @@ public class GameManager : MonoBehaviour
 
             // Makes the LevelPercentageText Invisible
             GameObject.Find("LevelPercentageText").GetComponent<Text>().color = new Color(0, 0, 0, 0);
-            GameObject.Find("Score").GetComponent<Text>().color = new Color(0, 0, 0, 0);
+            try
+            {
+                GameObject.Find("Score").GetComponent<Text>().color = new Color(0, 0, 0, 0);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
     }
 }

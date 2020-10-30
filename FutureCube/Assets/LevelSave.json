@@ -1,19 +1,19 @@
 {
-    "Playername": "Hey Jessie",
+    "Playername": "Player",
     "Level01": 0,
     "Level02": 0,
     "Level03": 0,
     "Level04": 0,
     "Level05": 0,
-    "Level06": 0,
+    "Level06": 772,
     "Level11": 0,
     "Level12": 0,
     "Level13": 0,
     "Level14": 0,
     "Level15": 0,
     "Level16": 0,
-    "FirstLevelComplete": false,
+    "FirstLevelComplete": true,
     "FirstTry": false,
     "PlayerOutOfMap": true,
-    "SeasionOneCompleted": false
+    "SeasionOneCompleted": true
 }

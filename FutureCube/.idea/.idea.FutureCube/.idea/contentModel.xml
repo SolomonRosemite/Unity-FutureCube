@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Jesse\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Jesse\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_FutureCube.-861912552.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Jesse\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Jesse\.Rider2019.3\system\resharper-host\Local\Transient\ReSharperHost\v193\SolutionCaches\_FutureCube.-861912552.00" t="ExcludeRecursive" />
     <e p="C:\Users\Jesse\Documents\Unity\FutureCube\Unity-FutureCube\FutureCube" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -80,10 +80,6 @@
           </e>
         </e>
         <e p="Packages" t="Include">
-          <e p="Backendless.NET.5.3.0" t="Include">
-            <e p="LICENSE.txt" t="Include" />
-            <e p="README.txt" t="Include" />
-          </e>
           <e p="Newtonsoft.Json.9.0.1" t="Include">
             <e p="lib" t="Include">
               <e p="net45" t="Include">

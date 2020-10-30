@@ -130,11 +130,12 @@ public class SelfSystemApi : MonoBehaviour
                     Add = false;
                 }
             }
-            catch (System.Exception)
+            catch 
             {
+                System.Console.WriteLine(Playername[i]);
+                System.Console.WriteLine(loadedPlayer.Playername);
                 System.Console.WriteLine(i);
                 System.Console.WriteLine(count);
-                throw new NullReferenceException();
             }
         }
 

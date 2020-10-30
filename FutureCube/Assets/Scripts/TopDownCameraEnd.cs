@@ -8,6 +8,8 @@ public class TopDownCameraEnd : MonoBehaviour
     public Rigidbody Player;
     public GameObject TopPlatform;
 
+    private bool firstCollision = true;
+    
     void Start()
     {
         ins = this;
@@ -15,12 +17,15 @@ public class TopDownCameraEnd : MonoBehaviour
 
     void OnCollisionEnter(Collision collisionInfo)
     {
+        print(collisionInfo.collider.name);
         if (collisionInfo.collider.name == "Player")
-        {
-            StartCoroutine(TopPlatformSetFalse());
-        }
+            if (!firstCollision)
+            {
+                StartCoroutine(TopPlatformSetFalse());
+            } else 
+                firstCollision = false;
 
-        if (collisionInfo.collider.name == "Player" && SetbackCamera == true)
+        if (collisionInfo.collider.name == "Player" && SetbackCamera)
         {
             TopDownCamera.ins.FixCamera();
             StartCoroutine(Timer());

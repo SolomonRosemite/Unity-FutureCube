@@ -12,20 +12,20 @@ public class LevelComplete : MonoBehaviour
     {
         string currentScene = SceneManager.GetActiveScene().name;
 
-        var levelString = new String(currentScene.Where(Char.IsNumber).ToArray());
+        var levelString = new string(currentScene.Where(char.IsNumber).ToArray());
 
         int level = int.Parse(levelString);
 
         if (level == 6)
         {
-            NextScene = $"Thanks for Playing Cube";
+            NextScene = "Thanks for Playing Cube";
             return;
         }
-        else if (level < 10)
-        {
-            NextScene = $"Level0{level + 1}";
-            return;
-        }
+        // else if (level < 10)
+        // {
+        //     NextScene = $"Level0{level + 1}";
+        //     return;
+        // }
 
         NextScene = $"Level{level + 1}";
     }
@@ -51,7 +51,7 @@ public class LevelComplete : MonoBehaviour
 
         if (Level == 6)
         {
-            LoadJson.loadJson.JsonEditCompletedLevel(10);
+            LoadJson.loadJson.JsonEditCompletedLevel(6);
         }
         else
         {
