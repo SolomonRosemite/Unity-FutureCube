@@ -70,5 +70,5 @@ git clone https://github.com/SolomonRosemite/Unity-FutureCube.git
   <p align="center">Future Cube <a href="https://github.com/SolomonRosemite/Unity-FutureCube/blob/master/LICENSE">is MIT licensed 💖</a>
   </p>
   <p align="center">
-    <img src="./FutureCube/Docs/FutureCube%20Icon.png" width="80">
+    <img src="./FutureCube/Docs/FutureCube%20Icon.png" width="65">
 </p>
