@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./FutureCube/Docs/FutureCube%20Icon.png" width="150">
+  <img src="./FutureCube/Docs/FutureCube%20Icon.png" width="120">
   <h1 align="center">Future Cube</h1>
   <h4 align="center"><a href="https://rosemitefuturecube.weebly.com"><code>Try it Now</code></a></h4>
   <p align="center">A Unity Game made for Windows & Mobile</p>
