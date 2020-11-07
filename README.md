@@ -16,7 +16,7 @@
 
 # About📖
 
-- Future Cube is an extension of
+- Future Cube is an extension of a
   <a href="https://devassets.com/assets/how-to-make-a-video-game/">tutorial
   game.</a> Feel free to use it as you want :)
 
@@ -39,7 +39,7 @@ git clone https://github.com/SolomonRosemite/Unity-FutureCube.git
 2. (Optionally) Connect to Firebase:
 
 - Create a Firebase Project: <a href="https://firebase.google.com">here.</a>
-- Connect Project to Project:
+- Connect Unity Project to Firebase:
   <a href="https://firebase.google.com/docs/unity/setup">see here.</a>
 
 # Built with⛏️
@@ -70,5 +70,5 @@ git clone https://github.com/SolomonRosemite/Unity-FutureCube.git
   <p align="center">Future Cube <a href="https://github.com/SolomonRosemite/Unity-FutureCube/blob/master/LICENSE">is MIT licensed 💖</a>
   </p>
   <p align="center">
-    <img src="./FutureCube/Docs/FutureCube%20Icon.png" width="40">
+    <img src="./FutureCube/Docs/FutureCube%20Icon.png" width="80">
 </p>
