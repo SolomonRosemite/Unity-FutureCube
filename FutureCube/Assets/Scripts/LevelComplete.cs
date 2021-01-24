@@ -27,7 +27,7 @@ public class LevelComplete : MonoBehaviour
         //     return;
         // }
 
-        NextScene = $"Level{level + 1}";
+        NextScene = $"Level0{level + 1}";
     }
 
     public void LoadNextLevel()

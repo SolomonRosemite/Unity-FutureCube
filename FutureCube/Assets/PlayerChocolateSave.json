@@ -1,20 +1,20 @@
 {
-    "LevelComplete": 10,
+    "LevelComplete": 6,
     "Volume": -20.0,
     "SFXOnOff": false,
-    "MusicOnOff": false,
-    "PlayerName": "Player",
+    "MusicOnOff": true,
+    "PlayerName": "Gunna",
     "SetQuality": 5.0,
-    "V_Coins": 4772,
+    "V_Coins": 1168,
     "PlayerColor": {
-        "r": 1.0,
-        "g": 0.10980390012264252,
-        "b": 0.10980390012264252,
-        "a": 1.0
+        "r": 0.18431369960308076,
+        "g": 0.282353013753891,
+        "b": 0.34509798884391787,
+        "a": 0.0
     },
     "CurrentSkin": [
+        1,
         2,
-        0,
         0
     ]
 }

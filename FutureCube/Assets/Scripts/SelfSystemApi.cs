@@ -130,12 +130,18 @@ public class SelfSystemApi : MonoBehaviour
                     Add = false;
                 }
             }
-            catch 
+            catch
             {
-                System.Console.WriteLine(Playername[i]);
-                System.Console.WriteLine(loadedPlayer.Playername);
+                int k = 0;
+                Playername.ForEach(name =>
+                {
+                    print(k++);
+                    print(name);
+                });
                 System.Console.WriteLine(i);
                 System.Console.WriteLine(count);
+                System.Console.WriteLine(loadedPlayer.Playername);
+                System.Console.WriteLine(Playername[i-1]);
             }
         }
 

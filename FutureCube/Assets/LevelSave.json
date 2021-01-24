@@ -1,10 +1,10 @@
 {
-    "Playername": "Player",
-    "Level01": 0,
-    "Level02": 0,
-    "Level03": 0,
-    "Level04": 0,
-    "Level05": 0,
+    "Playername": "Gunna",
+    "Level01": 446,
+    "Level02": 528,
+    "Level03": 665,
+    "Level04": 685,
+    "Level05": 510,
     "Level06": 772,
     "Level11": 0,
     "Level12": 0,
@@ -13,7 +13,7 @@
     "Level15": 0,
     "Level16": 0,
     "FirstLevelComplete": true,
-    "FirstTry": false,
+    "FirstTry": true,
     "PlayerOutOfMap": true,
     "SeasionOneCompleted": true
 }

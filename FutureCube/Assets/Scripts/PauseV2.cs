@@ -20,7 +20,7 @@ public class PauseV2 : MonoBehaviour
         pauseV2 = this;
         normalAudio();
 
-        updateTip();
+        UpdateTip();
 
         try { audioSource = GameObject.FindGameObjectWithTag("OnLoadDestroy").GetComponent<AudioSource>(); } catch { }
 
@@ -40,7 +40,7 @@ public class PauseV2 : MonoBehaviour
         {
             if (gamePaused == true)
             {
-                updateTip();
+                UpdateTip();
                 Resume();
             }
             else
@@ -88,7 +88,7 @@ public class PauseV2 : MonoBehaviour
         Cursor.visible = true;
     }
 
-    public void updateTip()
+    private void UpdateTip()
     {
         tipIndex = Random.Range(1, 6);
 
@@ -98,7 +98,7 @@ public class PauseV2 : MonoBehaviour
         }
         if (tipIndex == 2)
         {
-            tipTextStr = "Tip: If you Suck at a Level maybe just take a break";
+            tipTextStr = "Tip: If you are stuck at a Level maybe just take a break";
         }
         if (tipIndex == 3)
         {

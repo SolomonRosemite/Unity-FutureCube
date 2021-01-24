@@ -15,13 +15,13 @@ namespace EZCameraShake
         /// The single instance of the CameraShaker in the current scene. Do not use if you have multiple instances.
         /// </summary>
         public static CameraShaker Instance;
-        static Dictionary<string, CameraShaker> instanceList = new Dictionary<string, CameraShaker>();
+        private static Dictionary<string, CameraShaker> instanceList = new Dictionary<string, CameraShaker>();
 
         [Space]
 
         /// <summary>
         /// The default position influcence of all shakes created by this shaker.
-        /// </summary>#
+        /// </summary>
         public Vector3 PositionalInfluence = new Vector3(0.15f, 0.15f, 0.15f);
         /// <summary>
         /// The default rotation influcence of all shakes created by this shaker.

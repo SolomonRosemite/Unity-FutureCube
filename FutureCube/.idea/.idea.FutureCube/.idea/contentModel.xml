@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\Jesse\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Jesse\.Rider2019.3\system\resharper-host\Local\Transient\ReSharperHost\v193\SolutionCaches\_FutureCube.-861912552.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Jesse\Documents\Unity\FutureCube\Unity-FutureCube\FutureCube" t="IncludeRecursive">
+    <e p="C:\Users\Jesse\.Rider2019.3\system\resharper-host\Local\Transient\ReSharperHost\v193\SolutionCaches\_FutureCube.689112891.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Jesse\Dev\C#\Unity\Unity-FutureCube\FutureCube" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Assets" t="Include">
@@ -77,6 +77,19 @@
           <e p="trash" t="Include">
             <e p="LevelChangerFadeOut.cs" t="Include" />
             <e p="LevelChangerLast.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Firebase" t="Include">
+          <e p="m2repository" t="Include">
+            <e p="com" t="Include">
+              <e p="google" t="Include">
+                <e p="Firebase" t="Include">
+                  <e p="firebase-instance-id-unity" t="Include">
+                    <e p="maven-metadata.xml" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
           </e>
         </e>
         <e p="Packages" t="Include">
