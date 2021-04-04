@@ -76,7 +76,10 @@ public class PlayerCollision : MonoBehaviour
             return;
         }
 
-        lastHeart.SetActive(false);
+        if (noLimitMode)
+        {
+            lastHeart.SetActive(false);
+        }
 
         try { PlayerMovement.playerMovement.enabled = false; }
         catch { PlayerMovePhone.playerMovement.enabled = false; }
