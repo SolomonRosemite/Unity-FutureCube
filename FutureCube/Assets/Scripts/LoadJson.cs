@@ -38,7 +38,7 @@ public class LoadJson : MonoBehaviour
 
     [HideInInspector] public byte SkinCountLJF = SkinCount;
 
-    [HideInInspector] public const float Version = 1.6f;
+    [HideInInspector] public const float Version = 1.7f;
     [HideInInspector] public bool UpdateAvailable;
 
     public ChunkDifficulty Difficulty = ChunkDifficulty.medium;
