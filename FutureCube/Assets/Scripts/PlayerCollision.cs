@@ -8,6 +8,8 @@ public class PlayerCollision : MonoBehaviour
     public bool immortal = false;
     public bool noLimitMode = false;
 
+    public GameObject lastHeart;
+
     private bool timeout = false;
 
     [HideInInspector]
@@ -26,7 +28,7 @@ public class PlayerCollision : MonoBehaviour
         public int heartsRemaining;
     }
 
-    private int heartsRemaining = 3;
+    private int heartsRemaining = 2;
 
     void OnCollisionEnter(Collision collisionInfo)
     {
@@ -50,7 +52,7 @@ public class PlayerCollision : MonoBehaviour
 
                         StartCoroutine(Set());
 
-                        // Dosen't Show the Bubble anymore.
+                        // Doesn't Show the Bubble anymore.
                         BubbleRender.enabled = false;
                     }
                 }
@@ -61,18 +63,20 @@ public class PlayerCollision : MonoBehaviour
 
     void EndGame()
     {
-        if (noLimitMode == true && heartsRemaining != 0)
+        if (noLimitMode && heartsRemaining != 0)
         {
             if (timeout == false)
             {
                 timeout = true;
                 heartsRemaining--;
 
-                EmitNewChunkEvent();
+                EmitHitObstacle();
                 StartCoroutine(SetTimeOut(.5f));
             }
             return;
         }
+
+        lastHeart.SetActive(false);
 
         try { PlayerMovement.playerMovement.enabled = false; }
         catch { PlayerMovePhone.playerMovement.enabled = false; }
@@ -86,7 +90,7 @@ public class PlayerCollision : MonoBehaviour
         timeout = false;
     }
 
-    private void EmitNewChunkEvent() => onHitObstacle?.Invoke(this, new OnHitObstacleEventArgs { heartsRemaining = heartsRemaining });
+    private void EmitHitObstacle() => onHitObstacle?.Invoke(this, new OnHitObstacleEventArgs { heartsRemaining = heartsRemaining });
 
     void OnTriggerEnter(Collider trigger)
     {

@@ -132,20 +132,21 @@ public class SelfSystemApi : MonoBehaviour
             }
             catch
             {
-                int k = 0;
-                Playername.ForEach(name =>
-                {
-                    print(k++);
-                    print(name);
-                });
-                System.Console.WriteLine(i);
-                System.Console.WriteLine(count);
-                System.Console.WriteLine(loadedPlayer.Playername);
-                System.Console.WriteLine(Playername[i-1]);
+
+                // int k = 0;
+                // Playername.ForEach(name =>
+                // {
+                //     print(k++);
+                //     print(name);
+                // });
+                // System.Console.WriteLine(i);
+                // System.Console.WriteLine(count);
+                // System.Console.WriteLine(loadedPlayer.Playername);
+                // System.Console.WriteLine(Playername[i-1]);
             }
         }
 
-        if (Add == true)
+        if (Add)
         {
             Playername.Add(loadedPlayer.Playername);
             Level01.Add(loadedPlayer.Level01);

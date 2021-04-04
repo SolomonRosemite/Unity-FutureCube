@@ -31,6 +31,7 @@ public class FindAndKill : MonoBehaviour
     {
         try
         {
+            Debug.Log("GOOD");
             DeadGameObject = GameObject.FindGameObjectWithTag(gameObjectTag);
             Go = true;
         }
@@ -42,7 +43,7 @@ public class FindAndKill : MonoBehaviour
 
     private void Update()
     {
-        if (Go == true)
+        if (Go)
         {
             time += 100 * Time.deltaTime;
             if (time > 110)

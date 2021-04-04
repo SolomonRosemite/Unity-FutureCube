@@ -5,6 +5,8 @@ using System;
 
 public class PlayerHearts : MonoBehaviour
 {
+    public GameObject[] hearts;
+
     void Start()
     {
         var playerCollision = gameObject.GetComponent<PlayerCollision>();
@@ -14,7 +16,7 @@ public class PlayerHearts : MonoBehaviour
 
     private void OnHitObstacle(object _, PlayerCollision.OnHitObstacleEventArgs args)
     {
-        // Todo: Show Remaining Hearts in Player UI.
-        print($"Remaining Hearts: {args.heartsRemaining}");
+        // print($"Remaining Hearts: {args.heartsRemaining}");
+        hearts[args.heartsRemaining + 1].SetActive(false);
     }
 }

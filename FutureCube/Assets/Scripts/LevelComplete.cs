@@ -8,7 +8,7 @@ public class LevelComplete : MonoBehaviour
 {
     public string NextScene;
 
-    void Start()
+    private void Start()
     {
         string currentScene = SceneManager.GetActiveScene().name;
 
@@ -21,13 +21,13 @@ public class LevelComplete : MonoBehaviour
             NextScene = "Thanks for Playing Cube";
             return;
         }
-        // else if (level < 10)
-        // {
-        //     NextScene = $"Level0{level + 1}";
-        //     return;
-        // }
+        else if (level < 10)
+        {
+            NextScene = $"Level0{level + 1}";
+            return;
+        }
 
-        NextScene = $"Level0{level + 1}";
+        NextScene = $"Level{level + 1}";
     }
 
     public void LoadNextLevel()
@@ -42,11 +42,11 @@ public class LevelComplete : MonoBehaviour
         // Create a temporary reference to the current scene.
         Scene currentScene = SceneManager.GetActiveScene();
 
-        int Level = Int32.Parse(currentScene.name.Substring(currentScene.name.Length - 1));
+        int Level = int.Parse(currentScene.name.Substring(currentScene.name.Length - 1));
 
         // Example "Level03" => "03"
         string TEMP = currentScene.name.Substring(currentScene.name.Length - 2);
-        int levelInt = Int32.Parse(TEMP);
+        int levelInt = int.Parse(TEMP);
         LevelJson.levelJson.LevelCompleted(levelInt, PointSystem.pointSystem.Point);
 
         if (Level == 6)
