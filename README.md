@@ -65,7 +65,7 @@ git clone https://github.com/SolomonRosemite/Unity-FutureCube.git
     Open Source
   </h2>
   <p align="center">
-    <sub>Copyright © 2020-present, Solomon Rosemite</sub>
+    <sub>Copyright © 2021-present, Solomon Rosemite</sub>
   </p>
   <p align="center">Future Cube <a href="https://github.com/SolomonRosemite/Unity-FutureCube/blob/master/LICENSE">is MIT licensed 💖</a>
   </p>
